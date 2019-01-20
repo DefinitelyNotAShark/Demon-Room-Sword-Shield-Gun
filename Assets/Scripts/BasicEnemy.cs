@@ -19,7 +19,7 @@ public class BasicEnemy : MonoBehaviour, IFightable
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");//get the player
-        particles = GetComponent<ParticleSystem>();
+        particles = GetComponentInChildren<ParticleSystem>();
         mesh = GetComponent<MeshRenderer>();
         collider = GetComponent<BoxCollider>();
     }
