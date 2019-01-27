@@ -35,9 +35,15 @@ public class BasicEnemy : MonoBehaviour, IFightable
         StartCoroutine(DestroyEnemyCooldown());//death cooldown
     }
 
+    public void GunHit()
+    {
+        if (!enemyIsDead)
+            StartCoroutine(DestroyEnemyCooldown());//death cooldown
+    }
+
     private void Update()
     {
-        if(!EnemyIsAtDestination())
+        if(!EnemyIsAtDestination())//unless the enemy is already at where it needs to go, it's going to move
         transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed *Time.deltaTime);//move in the direction of the player at specified speed
     }
 

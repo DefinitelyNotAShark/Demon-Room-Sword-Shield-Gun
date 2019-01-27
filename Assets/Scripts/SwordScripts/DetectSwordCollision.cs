@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 //this goes on the sword and handles any collision with it
 
 public class DetectSwordCollision : MonoBehaviour
