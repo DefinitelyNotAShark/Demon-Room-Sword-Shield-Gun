@@ -19,6 +19,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4427215076762022}
+  - component: {fileID: 114873227255548254}
   m_Layer: 0
   m_Name: SpawnPoint
   m_TagString: Untagged
@@ -53,6 +54,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4685332985184018}
+  - component: {fileID: 65049838505804230}
   m_Layer: 0
   m_Name: GunPrefab
   m_TagString: Untagged
@@ -175,9 +177,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1260019084467190}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.7374469, y: 2.354271, z: -0.15203142}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.168, y: 0.025, z: -0.036}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4120383948746854}
   - {fileID: 4075699096456170}
@@ -424,6 +426,18 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 0}
+--- !u!65 &65049838505804230
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1260019084467190}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7862723, y: 0.43077135, z: 0.17400083}
+  m_Center: {x: 0.016523719, y: 0.03765464, z: 0.07000001}
 --- !u!114 &114219051502614202
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3208,3 +3222,18 @@ MonoBehaviour:
   m_selectedFaces: 
   m_SelectedEdges: []
   m_selectedTriangles: 
+--- !u!114 &114873227255548254
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1018020325766480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26c94b7216c1808459949c3a40420c4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 1072844160707542, guid: 17c43744b0f404548bb0a6440b622d97,
+    type: 2}
+  shootCoolDownTime: 0.5
+  bulletSpeed: 10
