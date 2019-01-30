@@ -44,11 +44,11 @@ InputManager:
     negativeButton: 
     positiveButton: joystick button 9
     altNegativeButton: 
-    altPositiveButton: mouse 0
+    altPositiveButton: space
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
-    snap: 0
+    snap: 1
     invert: 0
     type: 0
     axis: 0

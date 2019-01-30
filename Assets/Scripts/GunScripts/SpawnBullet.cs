@@ -17,15 +17,17 @@ public class SpawnBullet : MonoBehaviour
     private float shootButtonValue;
     private bool coroutineStarted;
 
+    private Vector3 direction;
+
 
 	void Update ()
     {
-        shootButtonValue = Input.GetAxis("Shoot");
+        shootButtonValue = OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger);
 	}
 
     private void FixedUpdate()
     {
-        if(shootButtonValue > 0 && !coroutineStarted)
+        if(shootButtonValue > .5f && !coroutineStarted)
         {
             StartCoroutine(Shoot());
             coroutineStarted = true;
@@ -34,7 +36,8 @@ public class SpawnBullet : MonoBehaviour
 
     private IEnumerator Shoot()
     {
-        GameObject bulletInstance = Instantiate(bulletPrefab, this.gameObject.transform.position, Quaternion.identity);//instantiates a bullet at the spawn position and at it's set prefab rotation
+        
+        GameObject bulletInstance = Instantiate(bulletPrefab, transform.position, transform.rotation);//instantiates a bullet at the spawn position and at it's set prefab rotation
         bulletInstance.AddComponent<MoveBullet>().bulletSpeed = bulletSpeed;//give us a move script and set the speed to our bulletSpeed
         //AUDIO play a shooting sound here
         //PARTICLES play a muzzle flash particle here
