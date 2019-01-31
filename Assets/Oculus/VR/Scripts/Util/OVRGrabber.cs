@@ -62,6 +62,24 @@ public class OVRGrabber : MonoBehaviour
 	protected Dictionary<OVRGrabbable, int> m_grabCandidates = new Dictionary<OVRGrabbable, int>();
 	protected bool operatingWithoutOVRCameraRig = true;
 
+    //SOPHIE'S VARS
+    protected bool s_isDroppable()
+    {
+        if (grabbedObject != null)//if we have an object in our hand
+        {
+            if (grabbedObject.tag == "Gun" || grabbedObject.tag == "Sword")//HACK use an interface or something better to detect if droppable
+            {
+                Debug.Log("This object is a weapon and cannot be dropped");
+                return false;
+            }
+            else return true;
+        }
+        else return true;
+    }
+
+    [SerializeField]
+    private bool isLeftHand;//if this is true, we put the gun in it.
+
     /// <summary>
     /// The currently grabbed object.
     /// </summary>
@@ -115,6 +133,50 @@ public class OVRGrabber : MonoBehaviour
                 m_parentTransform = new GameObject().transform;
                 m_parentTransform.position = Vector3.zero;
                 m_parentTransform.rotation = Quaternion.identity;
+            }
+        }
+        GrabTheGunAndSword();
+       
+    }
+
+    /// <summary>
+    /// Checks which hand this script is on and finds the weapon that hand uses and calls GrabBegin on it
+    /// </summary>
+    void GrabTheGunAndSword()
+    {
+        //this grabs our weapon right at the start
+        if (grabbedObject == null && isLeftHand)//if we're not grabbing anything (which we shouldn't be) and it's our gun script;
+        {
+            try
+            {
+                //try to add our gun to the list of grabbable candidates and then immediately call grab begin and see what happens
+                GameObject gun = GameObject.FindGameObjectWithTag("Gun");
+                OVRGrabbable grabbable = gun.GetComponent<OVRGrabbable>();//try to get the grabbable script on the gun or it's parent
+                int refCount = 0;//i don't know what these do, but it seems like they're in the process of putting the object in the list of candidates
+                m_grabCandidates.TryGetValue(grabbable, out refCount);
+                m_grabCandidates[grabbable] = refCount + 1;
+                GrabBegin();
+            }
+            catch (System.NullReferenceException)
+            {
+                Debug.Log("can't find a gun in the scene");
+            }
+        }
+        else if(grabbedObject == null && !isLeftHand)
+        {
+            try
+            {
+                //try to add our gun to the list of grabbable candidates and then immediately call grab begin and see what happens
+                GameObject gun = GameObject.FindGameObjectWithTag("Sword");
+                OVRGrabbable grabbable = gun.GetComponent<OVRGrabbable>();//try to get the grabbable script on the gun or it's parent
+                int refCount = 0;//i don't know what these do, but it seems like they're in the process of putting the object in the list of candidates
+                m_grabCandidates.TryGetValue(grabbable, out refCount);
+                m_grabCandidates[grabbable] = refCount + 1;
+                GrabBegin();
+            }
+            catch (System.NullReferenceException)
+            {
+                Debug.Log("can't find a sword in the scene");
             }
         }
     }
@@ -320,7 +382,7 @@ public class OVRGrabber : MonoBehaviour
 
     protected void GrabEnd()
     {
-        if (m_grabbedObj != null)
+        if (m_grabbedObj != null && s_isDroppable())//checks if we're allowed to drop the thing being grabbed
         {
 			OVRPose localPose = new OVRPose { position = OVRInput.GetLocalControllerPosition(m_controller), orientation = OVRInput.GetLocalControllerRotation(m_controller) };
             OVRPose offsetPose = new OVRPose { position = m_anchorOffsetPosition, orientation = m_anchorOffsetRotation };

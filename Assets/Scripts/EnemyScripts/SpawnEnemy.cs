@@ -37,7 +37,7 @@ public class SpawnEnemy : MonoBehaviour
 
     private void Spawn()
     {
-        objectInstance = Instantiate(enemyPrefab); 
+        objectInstance = Instantiate(enemyPrefab, this.transform, true);//spawns our enemy at the position of the spawn point and it's normal rotation 
     }
 
 }

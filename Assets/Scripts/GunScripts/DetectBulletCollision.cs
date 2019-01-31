@@ -16,6 +16,7 @@ public class DetectBulletCollision : MonoBehaviour
             fightableObject.GunHit();//do whatever it's supposed to if it's hit
 
             Debug.Log("The bullet hit an enemy");
+            Destroy(this.gameObject);
         }
         catch (NullReferenceException)//if there's no fightable object
         {
@@ -23,4 +24,5 @@ public class DetectBulletCollision : MonoBehaviour
             //here we could play some particles for the bullet hitting a solid object like some sparks or something
         }
     }
+
 }
