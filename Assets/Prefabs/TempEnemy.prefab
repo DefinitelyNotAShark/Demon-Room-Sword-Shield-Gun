@@ -40,7 +40,6 @@ GameObject:
   - component: {fileID: 23127365639329324}
   - component: {fileID: 65634263142690532}
   - component: {fileID: 54528414374275946}
-  - component: {fileID: 114553775266936664}
   - component: {fileID: 114031186366070436}
   m_Layer: 0
   m_Name: TempEnemy
@@ -68,14 +67,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1575543381540386}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.590001, y: 1.1, z: 0}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 1.2545568, y: 1.4872457, z: 8.029999}
   m_LocalScale: {x: 0.2366091, y: 2.04683, z: 0.713542}
   m_Children:
   - {fileID: 4008689323115712}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!23 &23127365639329324
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -159,22 +158,6 @@ MonoBehaviour:
   speed: 4
   enemyCoolDownLength: 2
   minRange: 1
---- !u!114 &114553775266936664
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1575543381540386}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02d61468f8b77ae4b92c344bc9a600fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_allowOffhandGrab: 1
-  m_snapPosition: 0
-  m_snapOrientation: 0
-  m_snapOffset: {fileID: 0}
-  m_grabPoints: []
 --- !u!198 &198597301054198262
 ParticleSystem:
   m_ObjectHideFlags: 1

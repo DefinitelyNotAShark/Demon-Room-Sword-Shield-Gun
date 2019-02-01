@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicEnemy : MonoBehaviour, IFightable
+public class BasicEnemy : Enemy
 {
     [SerializeField]
     private float speed;
@@ -14,31 +14,32 @@ public class BasicEnemy : MonoBehaviour, IFightable
     [Tooltip("The minimum distance an enemy can be to the player as a float.")]
     private float minRange;
 
+    [SerializeField]
+    private int enemyLives;
+
     private GameObject player;
     private ParticleSystem particles;
     private MeshRenderer mesh;
     private BoxCollider collider;
 
-    private bool enemyIsDead;
+    private bool coroutineStarted;
 
     private void Start()
     {
+        EnemyLives = enemyLives;//set our base lives to our customized lives
         player = GameObject.FindGameObjectWithTag("Player");//get the player
         particles = GetComponentInChildren<ParticleSystem>();
         mesh = GetComponent<MeshRenderer>();
         collider = GetComponent<BoxCollider>();
     }
 
-    public void SwordHit()
-    {
-        if(!enemyIsDead)
-        StartCoroutine(DestroyEnemyCooldown());//death cooldown
-    }
-
     private void Update()
     {
-        if(!EnemyIsAtDestination())
+        if(!EnemyIsAtDestination())//unless the enemy is already at where it needs to go, it's going to move
         transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed *Time.deltaTime);//move in the direction of the player at specified speed
+
+        if (EnemyIsDead() && !coroutineStarted)//detects if enemy has been killed every frame
+            StartCoroutine(DestroyEnemyCooldown());
     }
 
     private bool EnemyIsAtDestination()//if we've arrived at where we're going, we don't need to keep moving.
@@ -52,9 +53,9 @@ public class BasicEnemy : MonoBehaviour, IFightable
     }
 
     IEnumerator DestroyEnemyCooldown()
-    {   
+    {
         //AUDIO play enemy hit sound
-        enemyIsDead = true;//so that we don't start the coroutine more than once
+        coroutineStarted = true;
         particles.Play();//give us some death particles!
         mesh.enabled = false;//invisible
         collider.enabled = false;//can't hit again
