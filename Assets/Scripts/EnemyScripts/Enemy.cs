@@ -4,8 +4,15 @@ using UnityEngine;
 
 public abstract class Enemy : MonoBehaviour, IFightable
 {
-    public bool EnemyIsDead;
     public int EnemyLives;
+
+    public bool EnemyIsDead()
+    {
+        if (EnemyLives <= 0)
+            return true;
+
+        else return false;
+    }
 
     public void SwordHit()
     {

@@ -38,7 +38,7 @@ public class BasicEnemy : Enemy
         if(!EnemyIsAtDestination())//unless the enemy is already at where it needs to go, it's going to move
         transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed *Time.deltaTime);//move in the direction of the player at specified speed
 
-        if (EnemyIsDead && !coroutineStarted)//detects if enemy has been killed every frame
+        if (EnemyIsDead() && !coroutineStarted)//detects if enemy has been killed every frame
             StartCoroutine(DestroyEnemyCooldown());
     }
 
