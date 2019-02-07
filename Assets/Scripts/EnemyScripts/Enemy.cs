@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class Enemy : MonoBehaviour, IFightable
 {
+    [HideInInspector]
     public int EnemyLives;
 
     public bool EnemyIsDead()

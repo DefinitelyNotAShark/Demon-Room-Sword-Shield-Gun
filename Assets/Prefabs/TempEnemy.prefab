@@ -155,9 +155,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d83a56ce96ef8db4c817b2e1e5dc1e25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnemyLives: 0
   speed: 4
   enemyCoolDownLength: 2
   minRange: 1
+  enemyLives: 3
 --- !u!198 &198597301054198262
 ParticleSystem:
   m_ObjectHideFlags: 1
