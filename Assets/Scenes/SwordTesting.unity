@@ -118,7 +118,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh14816
+  m_Name: pb_Mesh14828
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -716,7 +716,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 915960648}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.04, y: 1.89, z: -1.41}
+  m_LocalPosition: {x: 1.372, y: 1.89, z: -1.41}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 605314320}
@@ -928,21 +928,6 @@ Prefab:
     - target: {fileID: 4111142213726396, guid: 24702512edead6c4786b37346ff152e0, type: 2}
       propertyPath: m_RootOrder
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114778785525573314, guid: 24702512edead6c4786b37346ff152e0,
-        type: 2}
-      propertyPath: m_snapPosition
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114778785525573314, guid: 24702512edead6c4786b37346ff152e0,
-        type: 2}
-      propertyPath: m_snapOrientation
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114778785525573314, guid: 24702512edead6c4786b37346ff152e0,
-        type: 2}
-      propertyPath: m_allowOffhandGrab
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24702512edead6c4786b37346ff152e0, type: 2}

@@ -14,6 +14,9 @@ public class SpawnBullet : MonoBehaviour
     [SerializeField]
     private float bulletSpeed;
 
+    [SerializeField]
+    private float bulletLifeTime;
+
     private float shootButtonValue;
     private bool coroutineStarted;
 
@@ -39,6 +42,7 @@ public class SpawnBullet : MonoBehaviour
         
         GameObject bulletInstance = Instantiate(bulletPrefab, transform.position, transform.rotation);//instantiates a bullet at the spawn position and at it's set prefab rotation
         bulletInstance.AddComponent<MoveBullet>().bulletSpeed = bulletSpeed;//give us a move script and set the speed to our bulletSpeed
+        bulletInstance.GetComponent<MoveBullet>().bulletLifeTime = bulletLifeTime;
         //AUDIO play a shooting sound here
         //PARTICLES play a muzzle flash particle here
         yield return new WaitForSeconds(shootCoolDownTime);
