@@ -1,0 +1,198 @@
+fileFormatVersion: 2
+guid: f4ec08fcc0f806f439c9de8849550a99
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Arm
+    100002: Back_End
+    100004: bottom
+    100006: Canister
+    100008: LightRig:directionalLight10
+    100010: LightRig:directionalLight11
+    100012: LightRig:directionalLight12
+    100014: LightRig:directionalLight13
+    100016: LightRig:directionalLight14
+    100018: LightRig:directionalLight15
+    100020: LightRig:directionalLight16
+    100022: LightRig:directionalLight17
+    100024: LightRig:directionalLight2
+    100026: LightRig:directionalLight3
+    100028: LightRig:directionalLight4
+    100030: LightRig:directionalLight5
+    100032: LightRig:directionalLight6
+    100034: LightRig:directionalLight7
+    100036: LightRig:directionalLight8
+    100038: LightRig:directionalLight9
+    100040: LightRig:LightMasterLoc
+    100042: LightRig:SunLight
+    100044: Lower_Arm
+    100046: pCylinder1
+    100048: pCylinder2
+    100050: pCylinder3
+    100052: pCylinder4
+    100054: pCylinder5
+    100056: pCylinder6
+    100058: pCylinder7
+    100060: //RootNode
+    100062: Upper_Arm
+    400000: Arm
+    400002: Back_End
+    400004: bottom
+    400006: Canister
+    400008: LightRig:directionalLight10
+    400010: LightRig:directionalLight11
+    400012: LightRig:directionalLight12
+    400014: LightRig:directionalLight13
+    400016: LightRig:directionalLight14
+    400018: LightRig:directionalLight15
+    400020: LightRig:directionalLight16
+    400022: LightRig:directionalLight17
+    400024: LightRig:directionalLight2
+    400026: LightRig:directionalLight3
+    400028: LightRig:directionalLight4
+    400030: LightRig:directionalLight5
+    400032: LightRig:directionalLight6
+    400034: LightRig:directionalLight7
+    400036: LightRig:directionalLight8
+    400038: LightRig:directionalLight9
+    400040: LightRig:LightMasterLoc
+    400042: LightRig:SunLight
+    400044: Lower_Arm
+    400046: pCylinder1
+    400048: pCylinder2
+    400050: pCylinder3
+    400052: pCylinder4
+    400054: pCylinder5
+    400056: pCylinder6
+    400058: pCylinder7
+    400060: //RootNode
+    400062: Upper_Arm
+    2000000: bottom
+    2100000: lambert1
+    2300000: Back_End
+    2300002: pCylinder1
+    2300004: pCylinder2
+    2300006: pCylinder3
+    2300008: pCylinder4
+    2300010: pCylinder5
+    2300012: pCylinder6
+    2300014: pCylinder7
+    2300016: Upper_Arm
+    3300000: Back_End
+    3300002: pCylinder1
+    3300004: pCylinder2
+    3300006: pCylinder3
+    3300008: pCylinder4
+    3300010: pCylinder5
+    3300012: pCylinder6
+    3300014: pCylinder7
+    3300016: Upper_Arm
+    4300000: Upper_Arm
+    4300002: pCylinder2
+    4300004: pCylinder3
+    4300006: Back_End
+    4300008: pCylinder1
+    4300010: pCylinder4
+    4300012: pCylinder6
+    4300014: pCylinder7
+    4300016: pCylinder5
+    10800000: LightRig:directionalLight10
+    10800002: LightRig:directionalLight11
+    10800004: LightRig:directionalLight12
+    10800006: LightRig:directionalLight13
+    10800008: LightRig:directionalLight14
+    10800010: LightRig:directionalLight15
+    10800012: LightRig:directionalLight16
+    10800014: LightRig:directionalLight17
+    10800016: LightRig:directionalLight2
+    10800018: LightRig:directionalLight3
+    10800020: LightRig:directionalLight4
+    10800022: LightRig:directionalLight5
+    10800024: LightRig:directionalLight6
+    10800026: LightRig:directionalLight7
+    10800028: LightRig:directionalLight8
+    10800030: LightRig:directionalLight9
+    10800032: LightRig:SunLight
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

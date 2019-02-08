@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 65634263142690532}
   - component: {fileID: 54528414374275946}
   - component: {fileID: 114031186366070436}
+  - component: {fileID: 195141042467060286}
   m_Layer: 0
   m_Name: TempEnemy
   m_TagString: Untagged
@@ -67,14 +68,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1575543381540386}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 1.2545568, y: 1.4872457, z: 8.029999}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -15.9682455, y: 1, z: 3.07}
   m_LocalScale: {x: 0.2366091, y: 2.04683, z: 0.713542}
   m_Children:
   - {fileID: 4008689323115712}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &23127365639329324
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -158,8 +159,29 @@ MonoBehaviour:
   EnemyLives: 0
   speed: 4
   enemyCoolDownLength: 2
-  minRange: 1
+  minRange: 5
   enemyLives: 3
+--- !u!195 &195141042467060286
+NavMeshAgent:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1575543381540386}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1
+  m_BaseOffset: 0.5
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!198 &198597301054198262
 ParticleSystem:
   m_ObjectHideFlags: 1
