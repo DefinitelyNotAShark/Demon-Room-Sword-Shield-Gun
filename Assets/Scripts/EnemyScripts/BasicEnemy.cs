@@ -5,15 +5,13 @@ using UnityEngine.AI;
 
 public class BasicEnemy : Enemy
 {
+    public float minRange { get; private set; }
+
     [SerializeField]
     private float speed;
 
     [SerializeField]
     private float enemyCoolDownLength;
-
-    [SerializeField]
-    [Tooltip("The minimum distance an enemy can be to the player as a float.")]
-    private float minRange;
 
     [SerializeField]
     private int enemyLives;
@@ -30,7 +28,7 @@ public class BasicEnemy : Enemy
 
 
     private bool coroutineStarted;
-    private bool coroutineStarted2;
+    public bool attackCoroutineStarted;
 
     private void Start()
     {
@@ -53,7 +51,7 @@ public class BasicEnemy : Enemy
 
     private void Update()
     {
-        StopEnemyWhenTooClose();
+        //StopEnemyWhenTooClose();
 
         if (EnemyIsDead() && !coroutineStarted)//detects if enemy has been killed every frame
             StartCoroutine(DestroyEnemyCooldown());
@@ -62,40 +60,40 @@ public class BasicEnemy : Enemy
     /// <summary>
     /// checks the distance between the enemy and the player, and acts according to distance
     /// </summary>
-    private void StopEnemyWhenTooClose()//if we've arrived at where we're going, we don't need to keep moving.
-    {
-        float distance = Vector3.Distance(this.transform.position, playerTransform.position);//the distance between us and the enemy
+    //private void StopEnemyWhenTooClose()//if we've arrived at where we're going, we don't need to keep moving.
+    //{
+    ////    float distance = Vector3.Distance(this.transform.position, playerTransform.position);//the distance between us and the enemy
 
-        if (distance < minRange && !agent.isStopped)//if we're too close and we're still moving
-        {
-            //Stop
-            agent.isStopped = true;//we stop
-            enemyAnim.SetBool("IsCloseToPlayer", true);//tell the animator that we close
+    ////    if (distance < minRange && !agent.isStopped)//if we're too close and we're still moving
+    ////    {
+    ////        //Stop
+    ////        agent.isStopped = true;//we stop
+    ////        enemyAnim.SetBool("IsCloseToPlayer", true);//tell the animator that we close
 
-        }
-        else if (distance < minRange && agent.isStopped)//if we're close and we've stopped
-        {
-            //Attack
-            if (!coroutineStarted2)//GET EM!
-                StartCoroutine(EnemyAttackCooldown());
-        }
+    ////    }
+    //    else if (distance < minRange && agent.isStopped)//if we're close and we've stopped
+    //    {
+    //        //Attack
+    //        if (!attackCoroutineStarted)//GET EM!
+    //            StartCoroutine(EnemyAttackCooldown());
+    //    }
 
-        else if (distance > minRange && agent.isStopped)//if the player or the enemy moves out of the space
-        {
-            //Move Again
-            agent.isStopped = false;
-            targetVector = playerTransform.position;//reset the target
-            enemyAnim.SetBool("IsCloseToPlayer", false);//tell the animator that we're not close enough for clobberin' anymore
-        }
-    }
+    //    else if (distance > minRange && agent.isStopped)//if the player or the enemy moves out of the space
+    //    {
+    //        //Move Again
+    //        agent.isStopped = false;
+    //        targetVector = playerTransform.position;//reset the target
+    //        enemyAnim.SetBool("IsCloseToPlayer", false);//tell the animator that we're not close enough for clobberin' anymore
+    //    }
+    //}
 
-    private IEnumerator EnemyAttackCooldown()
+    public IEnumerator EnemyAttackCooldown()
     {
         //AUDIO play attack sound
-        coroutineStarted2 = true;
+        attackCoroutineStarted = true;
         enemyAnim.SetTrigger("Attack");
         yield return new WaitForSeconds(2);
-        coroutineStarted2 = false;
+        attackCoroutineStarted = false;
     }
 
     IEnumerator DestroyEnemyCooldown()
