@@ -22,6 +22,7 @@ public class BasicEnemy : Enemy
     private ParticleSystem particles;
     private MeshRenderer mesh;
     private BoxCollider collider;
+    private Animator enemyAnim;
 
     //Nav Stuff
     private NavMeshAgent agent;//this is the component that tells the enemy to walk on the NavMesh
@@ -29,6 +30,7 @@ public class BasicEnemy : Enemy
 
 
     private bool coroutineStarted;
+    private bool coroutineStarted2;
 
     private void Start()
     {
@@ -39,12 +41,14 @@ public class BasicEnemy : Enemy
         particles = GetComponentInChildren<ParticleSystem>();
         mesh = GetComponent<MeshRenderer>();
         collider = GetComponent<BoxCollider>();
+        enemyAnim = GetComponent<Animator>();
 
         //AI
         playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();//get the player transform
         agent = GetComponent<NavMeshAgent>();
         targetVector = playerTransform.position;
         agent.SetDestination(targetVector);
+
     }
 
     private void Update()
@@ -56,19 +60,42 @@ public class BasicEnemy : Enemy
     }
 
     /// <summary>
-    /// checks the distance between the enemy and the player, and stops the enemy from moving into the player's space
+    /// checks the distance between the enemy and the player, and acts according to distance
     /// </summary>
     private void StopEnemyWhenTooClose()//if we've arrived at where we're going, we don't need to keep moving.
     {
-        float distance = Vector3.Distance(transform.position, playerTransform.position);//the distance between us and the enemy
+        float distance = Vector3.Distance(this.transform.position, playerTransform.position);//the distance between us and the enemy
 
         if (distance < minRange && !agent.isStopped)//if we're too close and we're still moving
-            agent.isStopped = true;//we stop
-
-        else  if(distance > minRange && agent.isStopped)//if the player or the enemy moves out of the space
         {
-            agent.isStopped = false;//resume enemy chase
+            //Stop
+            agent.isStopped = true;//we stop
+            enemyAnim.SetBool("IsCloseToPlayer", true);//tell the animator that we close
+
         }
+        else if (distance < minRange && agent.isStopped)//if we're close and we've stopped
+        {
+            //Attack
+            if (!coroutineStarted2)//GET EM!
+                StartCoroutine(EnemyAttackCooldown());
+        }
+
+        else if (distance > minRange && agent.isStopped)//if the player or the enemy moves out of the space
+        {
+            //Move Again
+            agent.isStopped = false;
+            targetVector = playerTransform.position;//reset the target
+            enemyAnim.SetBool("IsCloseToPlayer", false);//tell the animator that we're not close enough for clobberin' anymore
+        }
+    }
+
+    private IEnumerator EnemyAttackCooldown()
+    {
+        //AUDIO play attack sound
+        coroutineStarted2 = true;
+        enemyAnim.SetTrigger("Attack");
+        yield return new WaitForSeconds(2);
+        coroutineStarted2 = false;
     }
 
     IEnumerator DestroyEnemyCooldown()
