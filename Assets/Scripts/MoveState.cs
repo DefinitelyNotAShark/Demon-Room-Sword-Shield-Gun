@@ -5,53 +5,37 @@ using UnityEngine.AI;
 
 public class MoveState : StateMachineBehaviour
 {
-    //Components
-    private GameObject playerObject;
-    private GameObject enemyObject;
+    private BasicEnemy enemyScript;
+    private NavMeshAgent enemyAgent;
 
     private Transform playerTransform;
     private Transform enemyTransform;
 
-    private NavMeshAgent agent;//this is the component that tells the enemy to walk on the NavMesh
-    private Animator enemyAnim;
-
-    private float timeElapsed;
-    private float timeBetweenAttacks;
-
+    private Vector3 targetVector;
 
     public override void OnStateEnter(Animator animator, AnimatorStateInfo animatorStateInfo, int layerIndex)
-    {       
-        //set components OBJECTS
-        playerObject = GameObject.FindGameObjectWithTag("Player");//get the player transform
-        enemyObject = animator.gameObject;//get the transform of the animated enemy
+    {
+        enemyAgent = animator.gameObject.GetComponent<NavMeshAgent>();
+        enemyScript = animator.gameObject.GetComponent<BasicEnemy>();
 
-        //set components ENEMY COMPONENTS
-        enemyTransform = enemyObject.GetComponent<Transform>();
-        enemyAnim = enemyObject.GetComponent<Animator>();
-        agent = enemyObject.GetComponent<NavMeshAgent>();
-        agent.stoppingDistance = enemyObject.GetComponent<BasicEnemy>().minRange;//set the range for the enemy to stop
+        playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        enemyTransform = animator.gameObject.transform;
 
-        timeBetweenAttacks = 4.0f;
 
-        //set components PLAYER COMPONENTS
-        playerTransform = playerObject.GetComponent<Transform>();
     }
 
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo animatorStateInfo, int layerIndex)
     {
-        float distance = Vector3.Distance(enemyTransform.position, playerTransform.position);//the distance between us and the enemy;
+        //reset destination every frame
+        targetVector = playerTransform.position;//set the target to the player
+        enemyAgent.SetDestination(targetVector);//we go to the player
 
-        if (distance <= agent.stoppingDistance)//if the enemy is stopped because it's close
+        float distance = Vector3.Distance(playerTransform.position, enemyTransform.position);
+
+        if (distance <= enemyScript.minRange)
         {
-            enemyAnim.SetBool("IsCloseToPlayer", true);//tell the animator that we close
-
-            if (timeElapsed >= timeBetweenAttacks)//if our timer goes off
-            {
-                enemyAnim.SetTrigger("Attack");//the enemy attacks
-                timeElapsed = 0;//reset timer
-            }
-
-            timeElapsed += Time.deltaTime;//add time to the timer
-        }        
+            enemyAgent.isStopped = true;//stop it, you
+            animator.SetBool("IsCloseToPlayer", true);//this is how the animator knows to go back to idle
+        }
     }
 }
