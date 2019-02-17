@@ -17,13 +17,22 @@ public class SpawnBullet : MonoBehaviour
     [SerializeField]
     private float bulletLifeTime;
 
+    [SerializeField]
+    private Light muzzleFlash;
+
     private float shootButtonValue;
     private bool coroutineStarted;
+    private ParticleSystem muzzleParticles;
+
 
     private Vector3 direction;
 
+    private void Start()
+    {
+        muzzleParticles = GetComponentInChildren<ParticleSystem>();
+    }
 
-	void Update ()
+    void Update ()
     {
         shootButtonValue = OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger);
 	}
@@ -45,6 +54,9 @@ public class SpawnBullet : MonoBehaviour
         bulletInstance.GetComponent<MoveBullet>().bulletLifeTime = bulletLifeTime;
         //AUDIO play a shooting sound here
         //PARTICLES play a muzzle flash particle here
+        muzzleFlash.enabled = true;
+        muzzleParticles.Play();
+        muzzleFlash.enabled = false;
         yield return new WaitForSeconds(shootCoolDownTime);
         coroutineStarted = false;
     }
