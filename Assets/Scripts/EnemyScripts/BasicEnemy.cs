@@ -18,8 +18,13 @@ public class BasicEnemy : Enemy
     [SerializeField]
     private int enemyLives;
 
+    [SerializeField]
+    private ParticleSystem deathParticles;
+
+    [SerializeField]
+    private ParticleSystem hitParticles;
+
     private Transform playerTransform;
-    private ParticleSystem particles;
     private MeshRenderer mesh;
     private BoxCollider collider;
 
@@ -36,7 +41,6 @@ public class BasicEnemy : Enemy
         EnemyLives = enemyLives;//set our base lives to our customized lives
 
         //Components
-        particles = GetComponentInChildren<ParticleSystem>();
         mesh = GetComponent<MeshRenderer>();
         collider = GetComponent<BoxCollider>();
 
@@ -75,10 +79,16 @@ public class BasicEnemy : Enemy
     {
         //AUDIO play enemy hit sound
         coroutineStarted = true;
-        particles.Play();//give us some death particles!
+        deathParticles.Play();//give us some death particles!
         mesh.enabled = false;//invisible
         collider.enabled = false;//can't hit again
         yield return new WaitForSeconds(enemyCoolDownLength);
         Destroy(this.gameObject);//DIE
+    }
+
+    public override void SwordHit()
+    {
+        hitParticles.Play();
+        base.SwordHit();
     }
 }
