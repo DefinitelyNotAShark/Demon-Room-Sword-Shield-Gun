@@ -936,7 +936,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1057028260878026}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 59.353767, y: 0.605, z: 62.907}
+  m_LocalPosition: {x: 0.956, y: 1.138, z: -4.820678}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4820945473775738}
@@ -1271,8 +1271,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1890032381910686}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0, y: -0, z: -0.38}
+  m_LocalRotation: {x: 0.70710677, y: -0.000000022351742, z: -0.000000014901161, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: -0.37999994}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4820945473775738}
@@ -2605,7 +2605,7 @@ TrailRenderer:
     textureMode: 0
     generateLightingData: 0
   m_MinVertexDistance: 0.1
-  m_Autodestruct: 1
+  m_Autodestruct: 0
   m_Emitting: 1
 --- !u!114 &114232317911506696
 MonoBehaviour:
@@ -2629,7 +2629,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9adecb66ce8110c4c8b79b0f5e5965c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swooshVelocity: 5
+  swooshVelocity: 1.2
+  debugText: {fileID: 0}
 --- !u!114 &114447722305782312
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -167,8 +167,8 @@ public class OVRGrabber : MonoBehaviour
             try
             {
                 //try to add our gun to the list of grabbable candidates and then immediately call grab begin and see what happens
-                GameObject gun = GameObject.FindGameObjectWithTag("Sword");
-                OVRGrabbable grabbable = gun.GetComponent<OVRGrabbable>();//try to get the grabbable script on the gun or it's parent
+                GameObject sword = GameObject.FindGameObjectWithTag("Sword");
+                OVRGrabbable grabbable = sword.GetComponent<OVRGrabbable>();//try to get the grabbable script on the gun or it's parent
                 int refCount = 0;//i don't know what these do, but it seems like they're in the process of putting the object in the list of candidates
                 m_grabCandidates.TryGetValue(grabbable, out refCount);
                 m_grabCandidates[grabbable] = refCount + 1;
