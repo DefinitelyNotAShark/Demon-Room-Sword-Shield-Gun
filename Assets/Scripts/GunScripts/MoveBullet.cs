@@ -21,6 +21,4 @@ public class MoveBullet : MonoBehaviour
         yield return new WaitForSeconds(bulletLifeTime);
         Destroy(this.gameObject);//destroy after our lifetime float
     }
-
-
 }
