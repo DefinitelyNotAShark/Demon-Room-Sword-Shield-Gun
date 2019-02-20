@@ -27,10 +27,10 @@ public class SpawnEnemy : MonoBehaviour
 
     private GameObject objectInstance;
 
-    void Start()
+	void Start ()
     {
         StartCoroutine(StartSpawning());//start the spawning loop
-    }
+	}
 
     private IEnumerator StartSpawning()
     {
@@ -65,7 +65,7 @@ public class SpawnEnemy : MonoBehaviour
         int randomPointIndex = UnityEngine.Random.Range(0, spawnPoints.Length);
         Transform t;
 
-        for (int i = 0; i < spawnPoints.Length; i++)
+        for(int i = 0; i < spawnPoints.Length; i++)
         {
             if (i == randomPointIndex)
             {
@@ -76,4 +76,5 @@ public class SpawnEnemy : MonoBehaviour
         t = spawnPoints[0];
         return t.position;//if it didn't choose a point, return the first one of the index
     }
+
 }

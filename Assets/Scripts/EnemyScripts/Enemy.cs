@@ -15,12 +15,12 @@ public abstract class Enemy : MonoBehaviour, IFightable
         else return false;
     }
 
-    public virtual void SwordHit()
+    public void SwordHit()
     {
         EnemyLives -= 2;
     }
 
-    public virtual void GunHit()
+    public void GunHit()
     {
         EnemyLives--;
     }

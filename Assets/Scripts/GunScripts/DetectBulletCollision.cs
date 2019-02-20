@@ -12,7 +12,7 @@ public class DetectBulletCollision : MonoBehaviour
     {
         try
         {
-            fightableObject = other.GetComponent<IFightable>();//try to see if the object is fightable
+            fightableObject = other.GetComponent<IFightable>();//try to see if the object is fightable            
             fightableObject.GunHit();//do whatever it's supposed to if it's hit
 
             Debug.Log("The bullet hit an enemy");
@@ -20,9 +20,8 @@ public class DetectBulletCollision : MonoBehaviour
         }
         catch (NullReferenceException)//if there's no fightable object
         {
-            Debug.Log("The bullet hit something other than an enemy");
+            Debug.Log("The bullet hit " + other.gameObject.name.ToString());
             //here we could play some particles for the bullet hitting a solid object like some sparks or something
         }
     }
-
 }
