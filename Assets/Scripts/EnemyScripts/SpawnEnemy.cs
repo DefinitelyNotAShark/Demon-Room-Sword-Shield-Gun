@@ -12,21 +12,38 @@ public class SpawnEnemy : MonoBehaviour
     private float maxTimeBetweenSpawn;
 
     [SerializeField]
+    [Tooltip("The number of enemies spawned before the wave stops")]
+    private int numberOfEnemiesInWave;
+
+    [SerializeField]
+    [Tooltip("The amount of time you get to catch your breath inbetween waves")]
+    private float timeBetweenWaves;
+
+    [SerializeField]
     private GameObject enemyPrefab;
+
+    [SerializeField]
+    private Transform[] spawnPoints;
 
     private GameObject objectInstance;
 
-	void Start ()
+    void Start()
     {
         StartCoroutine(StartSpawning());//start the spawning loop
-	}
+    }
 
     private IEnumerator StartSpawning()
     {
-        for(; ; )//HACK maybe put this in a game loop later?
+
+        for (; ; )//HACK maybe put this in a game loop later?
         {
-            yield return new WaitForSeconds(ChooseARandomSpawnTime());//waits a random time that it chooses from our min to our max
-            Spawn();
+            yield return new WaitForSeconds(timeBetweenWaves);
+
+            for (int i = 0; i < numberOfEnemiesInWave; i++)
+            {
+                yield return new WaitForSeconds(ChooseARandomSpawnTime());//waits a random time that it chooses from our min to our max
+                Spawn();
+            }
         }
     }
 
@@ -37,7 +54,26 @@ public class SpawnEnemy : MonoBehaviour
 
     private void Spawn()
     {
-        objectInstance = Instantiate(enemyPrefab, this.transform.position, enemyPrefab.transform.rotation);//spawns our enemy at the position of the spawn point and it's normal rotation 
+        objectInstance = Instantiate(enemyPrefab, ChooseARandomSpawnPoint(), transform.localRotation);//spawns our enemy at the position of the spawn point and it's normal rotation 
     }
 
+    /// <summary>
+    /// Chooses a point at random from our array of transforms and returns the position
+    /// </summary>
+    private Vector3 ChooseARandomSpawnPoint()
+    {
+        int randomPointIndex = UnityEngine.Random.Range(0, spawnPoints.Length);
+        Transform t;
+
+        for (int i = 0; i < spawnPoints.Length; i++)
+        {
+            if (i == randomPointIndex)
+            {
+                t = spawnPoints[i];
+                return t.position;
+            }
+        }
+        t = spawnPoints[0];
+        return t.position;//if it didn't choose a point, return the first one of the index
+    }
 }
