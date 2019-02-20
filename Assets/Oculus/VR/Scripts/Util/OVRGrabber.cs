@@ -69,6 +69,7 @@ public class OVRGrabber : MonoBehaviour
         {
             if (grabbedObject.tag == "Gun" || grabbedObject.tag == "Sword")//HACK use an interface or something better to detect if droppable
             {
+                Debug.Log("This object is a weapon and cannot be dropped");
                 return false;
             }
             else return true;
