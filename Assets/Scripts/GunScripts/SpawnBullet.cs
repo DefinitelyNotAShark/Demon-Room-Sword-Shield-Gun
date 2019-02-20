@@ -17,8 +17,6 @@ public class SpawnBullet : MonoBehaviour
     [SerializeField]
     private float bulletLifeTime;
 
-    private float shootButtonValue;
-    private bool coroutineStarted;
     private ParticleSystem muzzleFlash;
 
     private Vector3 direction;
@@ -28,29 +26,16 @@ public class SpawnBullet : MonoBehaviour
         muzzleFlash = GetComponentInChildren<ParticleSystem>();
     }
 
-
-    void Update ()
+    private void Update()
     {
-        shootButtonValue = OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger);
-	}
-
-    private void FixedUpdate()
-    {
-        if(shootButtonValue > .5f && !coroutineStarted)
+        if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger))
         {
-            StartCoroutine(Shoot());
-            coroutineStarted = true;
-        }
-    }
+            //AUDIO play a shooting sound here
+            muzzleFlash.Play();
 
-    private IEnumerator Shoot()
-    {
-        GameObject bulletInstance = Instantiate(bulletPrefab, transform.position, transform.rotation);//instantiates a bullet at the spawn position and at it's set prefab rotation
-        bulletInstance.AddComponent<MoveBullet>().bulletSpeed = bulletSpeed;//give us a move script and set the speed to our bulletSpeed
-        bulletInstance.GetComponent<MoveBullet>().bulletLifeTime = bulletLifeTime;
-        //AUDIO play a shooting sound here
-        muzzleFlash.Play();
-        yield return new WaitForSeconds(shootCoolDownTime);
-        coroutineStarted = false;
+            GameObject bulletInstance = Instantiate(bulletPrefab, transform.position, transform.rotation);//instantiates a bullet at the spawn position and at it's set prefab rotation
+            bulletInstance.AddComponent<MoveBullet>().bulletSpeed = bulletSpeed;//give us a move script and set the speed to our bulletSpeed
+            bulletInstance.GetComponent<MoveBullet>().bulletLifeTime = bulletLifeTime;
+        }
     }
 }

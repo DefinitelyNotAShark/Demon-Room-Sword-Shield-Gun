@@ -16,6 +16,11 @@ public class BasicEnemy : Enemy
     [SerializeField]
     private int enemyLives;
 
+    [SerializeField]
+    private ParticleSystem hitParticles, deathParticles;
+
+    private Animator anim;
+
 
     private bool coroutineStarted;
 
@@ -23,11 +28,14 @@ public class BasicEnemy : Enemy
     {
         //Vars
         EnemyLives = enemyLives;//set our base lives to our customized lives
+        anim = GetComponent<Animator>();
     }
 
     private void Update()
     {
-        if (EnemyIsDead() && !coroutineStarted)//detects if enemy has been killed every frame
-            Destroy(this.gameObject);
+        if (EnemyIsDead())
+        {
+            anim.SetBool("IsDead", true);
+        }
     }
 }
