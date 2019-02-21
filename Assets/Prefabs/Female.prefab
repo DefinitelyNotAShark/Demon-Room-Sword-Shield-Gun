@@ -117,6 +117,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 400020}
+  - component: {fileID: 65801113490949628}
+  - component: {fileID: 114275617580590596}
   m_Layer: 0
   m_Name: B_R_Hand
   m_TagString: Untagged
@@ -2296,6 +2298,18 @@ Transform:
   m_Father: {fileID: 400000}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!65 &65801113490949628
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100014}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.36597583, y: 0.3, z: 0.4}
+  m_Center: {x: -0.049824014, y: 0.026362857, z: -0.007295076}
 --- !u!65 &65919744290303184
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -2338,12 +2352,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyLives: 0
+  HitParticles: {fileID: 0}
   minRange: 3
   speed: 2
   enemyCoolDownLength: 2
   enemyLives: 3
   hitParticles: {fileID: 198554757845232636}
   deathParticles: {fileID: 198638374308318102}
+--- !u!114 &114275617580590596
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c40b18b5d34076442b91ad9b5dd00dc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!195 &195994554105829992
 NavMeshAgent:
   m_ObjectHideFlags: 1
@@ -2372,7 +2398,7 @@ ParticleSystem:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1740901455765588}
   serializedVersion: 5
-  lengthInSec: 1
+  lengthInSec: 0.5
   simulationSpeed: 1
   stopAction: 0
   looping: 0
@@ -2497,7 +2523,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 7
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -3358,7 +3384,7 @@ ParticleSystem:
       cycleCount: 1
       repeatInterval: 0.01
     - serializedVersion: 2
-      time: 0.1
+      time: 0.05
       countCurve:
         serializedVersion: 2
         minMaxState: 0
@@ -3747,8 +3773,8 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.3372549, g: 0, b: 0.36862746, a: 1}
-        key1: {r: 0.7950864, g: 0.32301497, b: 0.839, a: 1}
+        key0: {r: 0.9811321, g: 0, b: 0.44610813, a: 1}
+        key1: {r: 0.6037736, g: 0.03702387, b: 0.27996108, a: 0.7921569}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}

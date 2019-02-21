@@ -7,6 +7,9 @@ public abstract class Enemy : MonoBehaviour, IFightable
     [HideInInspector]
     public int EnemyLives;
 
+    [HideInInspector]
+    public ParticleSystem HitParticles;
+
     public bool EnemyIsDead()
     {
         if (EnemyLives <= 0)
@@ -18,11 +21,13 @@ public abstract class Enemy : MonoBehaviour, IFightable
     public void SwordHit()
     {
         EnemyLives -= 2;
+        HitParticles.Play();
     }
 
     public void GunHit()
     {
         EnemyLives--;
+        HitParticles.Play();
     }
 }
 
