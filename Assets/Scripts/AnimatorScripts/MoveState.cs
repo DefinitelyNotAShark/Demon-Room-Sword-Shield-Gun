@@ -11,8 +11,6 @@ public class MoveState : StateMachineBehaviour
     private Transform playerTransform;
     private Transform enemyTransform;
 
-    private Vector3 targetVector;
-
     public override void OnStateEnter(Animator animator, AnimatorStateInfo animatorStateInfo, int layerIndex)
     {
         enemyAgent = animator.gameObject.GetComponent<NavMeshAgent>();
@@ -21,14 +19,16 @@ public class MoveState : StateMachineBehaviour
         playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         enemyTransform = animator.gameObject.transform;
 
+        enemyAgent.isStopped = false;//when we enter the move state, we can move again
 
+        enemyAgent.SetDestination(playerTransform.position);
+        Debug.Log("player transform = " + playerTransform.position.ToString());
     }
 
-    public override void OnStateUpdate(Animator animator, AnimatorStateInfo animatorStateInfo, int layerIndex)
+    public override void OnStateMove(Animator animator, AnimatorStateInfo animatorStateInfo, int layerIndex)
     {
-        //reset destination every frame
-        targetVector = playerTransform.position;//set the target to the player
-        enemyAgent.SetDestination(targetVector);//we go to the player
+        playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        enemyAgent.SetDestination(playerTransform.position);
 
         float distance = Vector3.Distance(playerTransform.position, enemyTransform.position);
 
