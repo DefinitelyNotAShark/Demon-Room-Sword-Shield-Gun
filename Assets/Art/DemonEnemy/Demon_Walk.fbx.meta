@@ -120,18 +120,23 @@ ModelImporter:
     7400000: Walk
     9500000: //RootNode
     13700000: Body
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: fa8cfce2c7eef1a428fdb654a897a4b5, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
-    motionNodeName: 
+    motionNodeName: GlobalCNTRL/RootCNTRL
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
@@ -139,7 +144,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
-    importConstraints: 0
+    importConstraints: 1
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -159,7 +164,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -199,7 +204,7 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 0.01
+    previousCalculatedGlobalScale: 0.75
     hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
@@ -219,8 +224,8 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    rootMotionBoneName: RootCNTRL
+    rootMotionBoneRotation: {x: 0.037767686, y: -0, z: -0, w: 0.99928653}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
