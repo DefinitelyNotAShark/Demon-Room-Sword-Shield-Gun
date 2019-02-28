@@ -18,8 +18,10 @@ public class DyingState : StateMachineBehaviour
         deathParticles = FindDeathParticles(animator);//find our death particle system
         deathParticles.Play();//play our particles
 
-        TurnOffRenderers(animator);//make invisible
-        animator.GetComponent<BoxCollider>().enabled = false;//make uncollideable
+        //cycle through all the renderers and turn them all off so the enemy is invisible
+        TurnOffRenderers(animator);
+        //cycle through all the colliders and turn them all off so the enemy can't be bumped into
+        TurnOffColliders(animator);
 
         //AUDIO play enemy death sound
     }
@@ -43,13 +45,23 @@ public class DyingState : StateMachineBehaviour
         }
     }
 
-    private ParticleSystem FindDeathParticles(Animator animator)
+    private void TurnOffColliders(Animator animator)
+    {
+        BoxCollider[] colliders = animator.GetComponentsInChildren<BoxCollider>();
+        foreach (BoxCollider c in colliders)
+        {
+            c.enabled = false;
+        }
+    }
+
+
+private ParticleSystem FindDeathParticles(Animator animator)
     {
         ParticleSystem[] particles = animator.gameObject.GetComponentsInChildren<ParticleSystem>();
 
         foreach(ParticleSystem p in particles)
         {
-            if (p.name == "DeathParticles")
+            if (p.name.Contains("DeathParticles"))
                 return p;
         }
         return null;

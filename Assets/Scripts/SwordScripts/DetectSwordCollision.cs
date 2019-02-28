@@ -12,10 +12,18 @@ public class DetectSwordCollision : MonoBehaviour
     {
         try
         {
-            fightableObject = other.GetComponent<IFightable>();//try to see if the object is fightable
-            fightableObject.SwordHit();//do whatever it's supposed to if it's hit
+            fightableObject = other.GetComponentInParent<IFightable>();//try to see if the object is fightable
 
-            Debug.Log("The sword hit an enemy");
+            if (fightableObject != null)
+            {
+                switch (other.gameObject.name)//do damage based on what object the collider is attatched to. Head shots do double damage.
+                {
+                    case "LegsDetectObject": fightableObject.SwordLegsHit(); break;//if the collider we hit is connected to a game object with that name, we do the body damage w/sword
+                    case "BodyDetectObject": fightableObject.SwordBodyHit(); break;
+                    case "HeadDetectObject": fightableObject.SwordHeadHit(); break;
+                }
+                Debug.Log("The sword hit an enemy");
+            }
         }
         catch(NullReferenceException)//if there's no fightable object
         {

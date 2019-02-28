@@ -22,7 +22,6 @@ public class MoveState : StateMachineBehaviour
         enemyAgent.isStopped = false;//when we enter the move state, we can move again
 
         enemyAgent.SetDestination(playerTransform.position);
-        Debug.Log("player transform = " + playerTransform.position.ToString());
     }
 
     public override void OnStateMove(Animator animator, AnimatorStateInfo animatorStateInfo, int layerIndex)

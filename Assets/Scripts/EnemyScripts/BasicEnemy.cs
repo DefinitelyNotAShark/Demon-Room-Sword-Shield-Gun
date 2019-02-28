@@ -30,7 +30,6 @@ public class BasicEnemy : Enemy
         EnemyLives = enemyLives;//set our base lives to our customized lives
         HitParticles = hitParticles;
         anim = GetComponent<Animator>();
-
     }
 
     private void Update()

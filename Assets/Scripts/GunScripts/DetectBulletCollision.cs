@@ -12,11 +12,20 @@ public class DetectBulletCollision : MonoBehaviour
     {
         try
         {
-            fightableObject = other.GetComponent<IFightable>();//try to see if the object is fightable            
-            fightableObject.GunHit();//do whatever it's supposed to if it's hit
+            fightableObject = other.GetComponent<IFightable>();//try to see if the object is fightable      
+            
+            if (fightableObject != null)
+            {
+                switch (other.gameObject.name)//do damage based on what object the collider is attatched to. Head shots do double damage.
+                {
+                    case "LegsDetectObject": fightableObject.GunLegsHit(); break;//if the collider we hit is connected to a game object with that name, we do the body damage w/sword
+                    case "BodyDetectObject": fightableObject.GunBodyHit(); break;
+                    case "HeadDetectObject": fightableObject.GunHeadHit(); break;
+                }
 
-            Debug.Log("The bullet hit an enemy");
-            Destroy(this.gameObject);
+                Debug.Log("The bullet hit " + other.gameObject.name.ToString());
+                Destroy(this.gameObject);
+            }
         }
         catch (NullReferenceException)//if there's no fightable object
         {
