@@ -29,8 +29,26 @@ public class SpawnEnemy : MonoBehaviour
 
 	void Start ()
     {
-        StartCoroutine(StartSpawning());//start the spawning loop
+        //StartCoroutine(StartSpawning());//start the spawning loop
 	}
+
+    private void Update()
+    {
+        DebugSpawnOnButtonPress();
+    }
+
+    private void DebugSpawnOnButtonPress()
+    {
+        //If we press any of the buttons we spawn an enemy
+        if (OVRInput.GetDown(OVRInput.Button.One) ||
+            OVRInput.GetDown(OVRInput.Button.Two) ||
+            OVRInput.GetDown(OVRInput.Button.Three) ||
+            OVRInput.GetDown(OVRInput.Button.Four)
+            )
+        {
+            Spawn();
+        }
+    }
 
     private IEnumerator StartSpawning()
     {
