@@ -45,13 +45,15 @@ public class DyingState : StateMachineBehaviour
 
     private ParticleSystem FindDeathParticles(Animator animator)
     {
-        ParticleSystem[] particles = animator.gameObject.GetComponentsInChildren<ParticleSystem>();
+        //ParticleSystem[] particles = animator.gameObject.GetComponentsInChildren<ParticleSystem>();
 
-        foreach(ParticleSystem p in particles)
-        {
-            if (p.name == "DeathParticles")
-                return p;
-        }
-        return null;
+        //foreach(ParticleSystem p in particles)
+        //{
+        //    if (p.name == "DeathParticles")
+        //        return p;
+        //}
+        //return null;
+
+        return animator.GetComponent<BasicEnemy>().DeathParticles;
     }
 }

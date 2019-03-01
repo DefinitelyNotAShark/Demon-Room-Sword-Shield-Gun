@@ -28,15 +28,19 @@ public class BasicEnemy : Enemy
     {
         //Vars
         EnemyLives = enemyLives;//set our base lives to our customized lives
-        HitParticles = hitParticles;
-        anim = GetComponent<Animator>();
 
+        //passs the particle systems into the base class to be used as general particle systems for any enemy
+        HitParticles = hitParticles;
+        DeathParticles = deathParticles;
+
+        anim = GetComponent<Animator>();
     }
 
     private void Update()
     {
         if (EnemyIsDead())
         {
+            //the death state behavior will take care of death effects
             anim.SetBool("IsDead", true);
         }
     }

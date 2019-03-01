@@ -8,7 +8,8 @@ public abstract class Enemy : MonoBehaviour, IFightable
     public int EnemyLives;
 
     [HideInInspector]
-    public ParticleSystem HitParticles;
+    public ParticleSystem HitParticles, DeathParticles;
+
 
     public bool EnemyIsDead()
     {
