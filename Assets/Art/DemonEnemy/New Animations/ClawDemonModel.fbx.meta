@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 760a397a8a9e8ba4c8b7fa20e9b19b79
+guid: b7d0870358e2acf43bf18ecab6e57861
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -44,21 +44,20 @@ ModelImporter:
     100076: L_KNEE_LOCATOR
     100078: L_shoulderCNTRL
     100080: L_wristCNTRL
-    100082: left
-    100084: R_clavicleCNTRL
-    100086: R_elbowCNTRL
-    100088: R_footCNTRL
-    100090: R_handCNTRL
-    100092: R_KNEE_LOCATOR
-    100094: R_shoulderCNTRL
-    100096: R_wristCNTRL
-    100098: RootCNTRL
-    100100: Spine1CNTRL
-    100102: Spine2CNTRL
-    100104: TOE_IK
-    100106: TOE_IK 1
-    100108: TOE_Pivot
-    100110: TOE_Pivot 1
+    100082: R_clavicleCNTRL
+    100084: R_elbowCNTRL
+    100086: R_footCNTRL
+    100088: R_handCNTRL
+    100090: R_KNEE_LOCATOR
+    100092: R_shoulderCNTRL
+    100094: R_wristCNTRL
+    100096: RootCNTRL
+    100098: Spine1CNTRL
+    100100: Spine2CNTRL
+    100102: TOE_IK
+    100104: TOE_IK 1
+    100106: TOE_Pivot
+    100108: TOE_Pivot 1
     400000: ANKLE_IK
     400002: ANKLE_IK 1
     400004: BALL_IK
@@ -100,25 +99,22 @@ ModelImporter:
     400076: L_KNEE_LOCATOR
     400078: L_shoulderCNTRL
     400080: L_wristCNTRL
-    400082: left
-    400084: R_clavicleCNTRL
-    400086: R_elbowCNTRL
-    400088: R_footCNTRL
-    400090: R_handCNTRL
-    400092: R_KNEE_LOCATOR
-    400094: R_shoulderCNTRL
-    400096: R_wristCNTRL
-    400098: RootCNTRL
-    400100: Spine1CNTRL
-    400102: Spine2CNTRL
-    400104: TOE_IK
-    400106: TOE_IK 1
-    400108: TOE_Pivot
-    400110: TOE_Pivot 1
-    2000000: left
+    400082: R_clavicleCNTRL
+    400084: R_elbowCNTRL
+    400086: R_footCNTRL
+    400088: R_handCNTRL
+    400090: R_KNEE_LOCATOR
+    400092: R_shoulderCNTRL
+    400094: R_wristCNTRL
+    400096: RootCNTRL
+    400098: Spine1CNTRL
+    400100: Spine2CNTRL
+    400102: TOE_IK
+    400104: TOE_IK 1
+    400106: TOE_Pivot
+    400108: TOE_Pivot 1
     2100000: lambert1
     4300000: Body
-    7400000: Take 001
     9500000: //RootNode
     13700000: Body
   externalObjects: {}
@@ -148,39 +144,11 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: Take 001
-      takeName: Take 001
-      firstFrame: 1
-      lastFrame: 40
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+    clipAnimations: []
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 75
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
