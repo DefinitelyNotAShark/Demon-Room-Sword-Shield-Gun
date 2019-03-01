@@ -19,10 +19,19 @@ public class BasicEnemy : Enemy
     [SerializeField]
     private ParticleSystem hitParticles, deathParticles;
 
+    [SerializeField]
+    private AudioClip snarlSound, attackSound;
+
+    [SerializeField]
+    private float snarlVolume, attackVolume;
+
     private Animator anim;
+    private AudioSource audio;
 
 
     private bool coroutineStarted;
+    private float timeElapsed;
+    float enemySnarlTime;//the time nwhere we snarlllll
 
     private void Start()
     {
@@ -30,7 +39,8 @@ public class BasicEnemy : Enemy
         EnemyLives = enemyLives;//set our base lives to our customized lives
         HitParticles = hitParticles;
         anim = GetComponent<Animator>();
-
+        audio = GetComponent<AudioSource>();
+        timeElapsed = 0;
     }
 
     private void Update()
@@ -39,5 +49,20 @@ public class BasicEnemy : Enemy
         {
             anim.SetBool("IsDead", true);
         }
+
+        timeElapsed += Time.deltaTime;
+
+        if(timeElapsed >= enemySnarlTime)
+        {
+            audio.PlayOneShot(snarlSound, snarlVolume);
+            Debug.Log("Time to snarl!");
+            timeElapsed = 0;
+            enemySnarlTime = RandomSnarlTime();
+        }
+    }
+
+    private float RandomSnarlTime()
+    {
+        return Random.Range(4, 10);
     }
 }
