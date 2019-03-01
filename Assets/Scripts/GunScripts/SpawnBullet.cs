@@ -39,7 +39,7 @@ public class SpawnBullet : MonoBehaviour
     {
         if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger))
         {
-            //AUDIO play a shooting sound here
+            GetComponent<AudioSource>().Play();
             lastShoot = Time.time;
             muzzleFlashLight.enabled = true;
             muzzleFlash.Play();

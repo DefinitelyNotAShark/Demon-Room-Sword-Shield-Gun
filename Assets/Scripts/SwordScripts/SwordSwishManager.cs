@@ -12,17 +12,33 @@ public class SwordSwishManager : MonoBehaviour
 
     private Vector3 lastPosition;
 
-	void Start ()
+    private AudioSource audio;
+
+    [SerializeField]
+    private AudioClip slashSound;
+
+    [SerializeField]
+    private float slashVolume;
+
+    void Start ()
     {
+        audio = GetComponent<AudioSource>();
         trailRenderer = GetComponentInChildren<TrailRenderer>();
 	}
 	
 	void Update ()
     {
         if (Speed() >= swooshVelocity)
+            
+        {
             trailRenderer.emitting = true;
+            audio.PlayOneShot(slashSound, slashVolume); // adding slash sound
+            Debug.Log("Time to slash!");
+        }
 
         else trailRenderer.emitting = false;
+        
+        
 
     }
 
