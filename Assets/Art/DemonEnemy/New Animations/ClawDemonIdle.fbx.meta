@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c75eccbbc1fcdda47b74e7636f8e7b22
+guid: 1e5502d1fa6f79e4ea95a616d79f5802
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -14,52 +14,50 @@ ModelImporter:
     100016: GlobalCNTRL
     100018: HEEL_Pivot
     100020: HEEL_Pivot 1
-    100022: imagePlane2
-    100024: joint1
-    100026: joint10
-    100028: joint11
-    100030: joint12
-    100032: joint13
-    100034: joint15
-    100036: joint16
-    100038: joint16 1
-    100040: joint16 2
-    100042: joint16 3
-    100044: joint16 4
-    100046: joint17
-    100048: joint17 1
-    100050: joint17 2
-    100052: joint17 3
-    100054: joint2
-    100056: joint3
-    100058: joint4
-    100060: joint5
-    100062: joint6
-    100064: joint7
-    100066: joint8
-    100068: joint9
-    100070: L_clavicleCNTRL
-    100072: L_elbowCNTRL
-    100074: L_footCNTRL
-    100076: L_handCNTRL
-    100078: L_KNEE_LOCATOR
-    100080: L_shoulderCNTRL
-    100082: L_wristCNTRL
-    100084: left
-    100086: R_clavicleCNTRL
-    100088: R_elbowCNTRL
-    100090: R_footCNTRL
-    100092: R_handCNTRL
-    100094: R_KNEE_LOCATOR
-    100096: R_shoulderCNTRL
-    100098: R_wristCNTRL
-    100100: RootCNTRL
-    100102: Spine1CNTRL
-    100104: Spine2CNTRL
-    100106: TOE_IK
-    100108: TOE_IK 1
-    100110: TOE_Pivot
-    100112: TOE_Pivot 1
+    100022: joint1
+    100024: joint10
+    100026: joint11
+    100028: joint12
+    100030: joint13
+    100032: joint15
+    100034: joint16
+    100036: joint16 1
+    100038: joint16 2
+    100040: joint16 3
+    100042: joint16 4
+    100044: joint17
+    100046: joint17 1
+    100048: joint17 2
+    100050: joint17 3
+    100052: joint2
+    100054: joint3
+    100056: joint4
+    100058: joint5
+    100060: joint6
+    100062: joint7
+    100064: joint8
+    100066: joint9
+    100068: L_clavicleCNTRL
+    100070: L_elbowCNTRL
+    100072: L_footCNTRL
+    100074: L_handCNTRL
+    100076: L_KNEE_LOCATOR
+    100078: L_shoulderCNTRL
+    100080: L_wristCNTRL
+    100082: R_clavicleCNTRL
+    100084: R_elbowCNTRL
+    100086: R_footCNTRL
+    100088: R_handCNTRL
+    100090: R_KNEE_LOCATOR
+    100092: R_shoulderCNTRL
+    100094: R_wristCNTRL
+    100096: RootCNTRL
+    100098: Spine1CNTRL
+    100100: Spine2CNTRL
+    100102: TOE_IK
+    100104: TOE_IK 1
+    100106: TOE_Pivot
+    100108: TOE_Pivot 1
     400000: ANKLE_IK
     400002: ANKLE_IK 1
     400004: BALL_IK
@@ -71,53 +69,50 @@ ModelImporter:
     400016: GlobalCNTRL
     400018: HEEL_Pivot
     400020: HEEL_Pivot 1
-    400022: imagePlane2
-    400024: joint1
-    400026: joint10
-    400028: joint11
-    400030: joint12
-    400032: joint13
-    400034: joint15
-    400036: joint16
-    400038: joint16 1
-    400040: joint16 2
-    400042: joint16 3
-    400044: joint16 4
-    400046: joint17
-    400048: joint17 1
-    400050: joint17 2
-    400052: joint17 3
-    400054: joint2
-    400056: joint3
-    400058: joint4
-    400060: joint5
-    400062: joint6
-    400064: joint7
-    400066: joint8
-    400068: joint9
-    400070: L_clavicleCNTRL
-    400072: L_elbowCNTRL
-    400074: L_footCNTRL
-    400076: L_handCNTRL
-    400078: L_KNEE_LOCATOR
-    400080: L_shoulderCNTRL
-    400082: L_wristCNTRL
-    400084: left
-    400086: R_clavicleCNTRL
-    400088: R_elbowCNTRL
-    400090: R_footCNTRL
-    400092: R_handCNTRL
-    400094: R_KNEE_LOCATOR
-    400096: R_shoulderCNTRL
-    400098: R_wristCNTRL
-    400100: RootCNTRL
-    400102: Spine1CNTRL
-    400104: Spine2CNTRL
-    400106: TOE_IK
-    400108: TOE_IK 1
-    400110: TOE_Pivot
-    400112: TOE_Pivot 1
-    2000000: left
+    400022: joint1
+    400024: joint10
+    400026: joint11
+    400028: joint12
+    400030: joint13
+    400032: joint15
+    400034: joint16
+    400036: joint16 1
+    400038: joint16 2
+    400040: joint16 3
+    400042: joint16 4
+    400044: joint17
+    400046: joint17 1
+    400048: joint17 2
+    400050: joint17 3
+    400052: joint2
+    400054: joint3
+    400056: joint4
+    400058: joint5
+    400060: joint6
+    400062: joint7
+    400064: joint8
+    400066: joint9
+    400068: L_clavicleCNTRL
+    400070: L_elbowCNTRL
+    400072: L_footCNTRL
+    400074: L_handCNTRL
+    400076: L_KNEE_LOCATOR
+    400078: L_shoulderCNTRL
+    400080: L_wristCNTRL
+    400082: R_clavicleCNTRL
+    400084: R_elbowCNTRL
+    400086: R_footCNTRL
+    400088: R_handCNTRL
+    400090: R_KNEE_LOCATOR
+    400092: R_shoulderCNTRL
+    400094: R_wristCNTRL
+    400096: RootCNTRL
+    400098: Spine1CNTRL
+    400100: Spine2CNTRL
+    400102: TOE_IK
+    400104: TOE_IK 1
+    400106: TOE_Pivot
+    400108: TOE_Pivot 1
     2100000: lambert1
     4300000: Body
     7400000: Take 001
@@ -155,7 +150,7 @@ ModelImporter:
       name: Take 001
       takeName: Take 001
       firstFrame: 1
-      lastFrame: 25
+      lastFrame: 40
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -182,7 +177,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 75
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
@@ -202,7 +197,7 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 0.01
+    previousCalculatedGlobalScale: 0.75
     hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
