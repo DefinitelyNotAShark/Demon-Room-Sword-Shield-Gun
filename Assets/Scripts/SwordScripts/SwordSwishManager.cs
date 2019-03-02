@@ -7,6 +7,10 @@ public class SwordSwishManager : MonoBehaviour
 {
     [SerializeField]
     private float swooshVelocity = 5;
+    [SerializeField]
+    private float maximumSwoosh = 25;
+    [SerializeField]
+    private Gradient speedGradient;
 
     private TrailRenderer trailRenderer;
 
@@ -19,6 +23,7 @@ public class SwordSwishManager : MonoBehaviour
 	
 	void Update ()
     {
+        trailRenderer.startColor = speedGradient.Evaluate(1/(maximumSwoosh / Speed()));
         if (Speed() >= swooshVelocity)
             trailRenderer.emitting = true;
 
