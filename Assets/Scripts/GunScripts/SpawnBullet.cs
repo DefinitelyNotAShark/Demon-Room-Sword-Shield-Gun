@@ -23,14 +23,20 @@ public class SpawnBullet : MonoBehaviour
     [SerializeField]
     private float lightThreshold = .5f;
 
+    [SerializeField]
+    private AudioClip audioClip;
+
     private float lastShoot;
 
     private ParticleSystem muzzleFlash;
 
     private Vector3 direction;
 
+    private AudioSource audioSource;
+
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         muzzleFlash = GetComponentInChildren<ParticleSystem>();
         muzzleFlashLight.enabled = false;
     }
@@ -40,6 +46,11 @@ public class SpawnBullet : MonoBehaviour
         if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger))
         {
             //AUDIO play a shooting sound here
+            if (audioSource != null && audioClip != null)
+            {
+                audioSource.clip = audioClip;
+                audioSource.Play();
+            }
             lastShoot = Time.time;
             muzzleFlashLight.enabled = true;
             muzzleFlash.Play();
