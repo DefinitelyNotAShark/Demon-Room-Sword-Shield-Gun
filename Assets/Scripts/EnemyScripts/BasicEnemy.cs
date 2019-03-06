@@ -21,8 +21,7 @@ public class BasicEnemy : Enemy
 
     private Animator anim;
 
-
-    private bool coroutineStarted;
+    private bool hasStartedDeath;//this is so that the enemy doesn't keep entering the death state once it's dead. 
 
     private void Start()
     {
@@ -34,14 +33,27 @@ public class BasicEnemy : Enemy
         DeathParticles = deathParticles;
 
         anim = GetComponent<Animator>();
+        hasStartedDeath = false;
     }
 
     private void Update()
     {
-        if (EnemyIsDead())
+        if (EnemyIsDead() && !hasStartedDeath)
         {
             //the death state behavior will take care of death effects
-            anim.SetBool("IsDead", true);
+            anim.SetTrigger("Death");
+            hasStartedDeath = true;
         }
+
+        //check if the base detected a hurt to trigger the animation. Don't do hurt animation AND death animation, so only if the enemy is still alive
+        if (isHurt && !EnemyIsDead())
+            Hurt();
+    }
+
+    private void Hurt()
+    {
+        anim.SetTrigger("Hurt");
+        isHurt = false;//reset the variable
+
     }
 }

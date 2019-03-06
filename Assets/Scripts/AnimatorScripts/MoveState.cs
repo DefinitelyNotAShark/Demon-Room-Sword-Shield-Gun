@@ -31,7 +31,7 @@ public class MoveState : StateMachineBehaviour
 
         float distance = Vector3.Distance(playerTransform.position, enemyTransform.position);
 
-        if (distance <= enemyScript.minRange)
+        if (distance <= enemyScript.minRange)//check if the enemy is near the player and stop it.
         {
             enemyAgent.isStopped = true;//stop it, you
             animator.SetBool("IsCloseToPlayer", true);//this is how the animator knows to go back to idle
