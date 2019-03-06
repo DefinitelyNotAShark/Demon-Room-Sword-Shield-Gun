@@ -13,8 +13,6 @@ public class DyingState : StateMachineBehaviour
 
     public override void OnStateEnter(Animator animator, AnimatorStateInfo animatorStateInfo, int layerIndex)
     {
-        Debug.Log("ENTERED DYING STATE FOR " + animator.gameObject.name.ToString());
-
         deathParticles = FindDeathParticles(animator);//find our death particle system
         deathParticles.Play();//play our particles
 
@@ -45,15 +43,6 @@ public class DyingState : StateMachineBehaviour
 
     private ParticleSystem FindDeathParticles(Animator animator)
     {
-        //ParticleSystem[] particles = animator.gameObject.GetComponentsInChildren<ParticleSystem>();
-
-        //foreach(ParticleSystem p in particles)
-        //{
-        //    if (p.name == "DeathParticles")
-        //        return p;
-        //}
-        //return null;
-
         return animator.GetComponent<BasicEnemy>().DeathParticles;
     }
 }

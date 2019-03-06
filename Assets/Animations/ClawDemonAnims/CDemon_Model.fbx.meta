@@ -1,0 +1,212 @@
+fileFormatVersion: 2
+guid: 9482f384008c0914c964c51a7a7bed14
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: ANKLE_IK
+    100002: ANKLE_IK 1
+    100004: BALL_IK
+    100006: BALL_IK 1
+    100008: BALL_Pivot
+    100010: BALL_Pivot 1
+    100012: //RootNode
+    100014: GlobalCNTRL
+    100016: Head
+    100018: headCNTRL
+    100020: HeadTip
+    100022: HEEL_Pivot
+    100024: HEEL_Pivot 1
+    100026: joint1
+    100028: joint10
+    100030: joint11
+    100032: joint12
+    100034: joint13
+    100036: joint15
+    100038: joint16
+    100040: joint16 1
+    100042: joint16 2
+    100044: joint16 3
+    100046: joint16 4
+    100048: joint17
+    100050: joint17 1
+    100052: joint17 2
+    100054: joint17 3
+    100056: joint2
+    100058: joint3
+    100060: joint4
+    100062: joint5
+    100064: joint6
+    100066: joint8
+    100068: joint9
+    100070: L_clavicleCNTRL
+    100072: L_elbowCNTRL
+    100074: L_footCNTRL
+    100076: L_handCNTRL
+    100078: L_KNEE_LOCATOR
+    100080: L_shoulderCNTRL
+    100082: L_wristCNTRL
+    100084: Neck
+    100086: neckCNTRL
+    100088: polySurface2
+    100090: R_clavicleCNTRL
+    100092: R_elbowCNTRL
+    100094: R_footCNTRL
+    100096: R_handCNTRL
+    100098: R_KNEE_LOCATOR
+    100100: R_shoulderCNTRL
+    100102: R_wristCNTRL
+    100104: RootCNTRL
+    100106: Spine1CNTRL
+    100108: Spine2CNTRL
+    100110: Spine3
+    100112: TOE_IK
+    100114: TOE_IK 1
+    100116: TOE_Pivot
+    100118: TOE_Pivot 1
+    400000: ANKLE_IK
+    400002: ANKLE_IK 1
+    400004: BALL_IK
+    400006: BALL_IK 1
+    400008: BALL_Pivot
+    400010: BALL_Pivot 1
+    400012: //RootNode
+    400014: GlobalCNTRL
+    400016: Head
+    400018: headCNTRL
+    400020: HeadTip
+    400022: HEEL_Pivot
+    400024: HEEL_Pivot 1
+    400026: joint1
+    400028: joint10
+    400030: joint11
+    400032: joint12
+    400034: joint13
+    400036: joint15
+    400038: joint16
+    400040: joint16 1
+    400042: joint16 2
+    400044: joint16 3
+    400046: joint16 4
+    400048: joint17
+    400050: joint17 1
+    400052: joint17 2
+    400054: joint17 3
+    400056: joint2
+    400058: joint3
+    400060: joint4
+    400062: joint5
+    400064: joint6
+    400066: joint8
+    400068: joint9
+    400070: L_clavicleCNTRL
+    400072: L_elbowCNTRL
+    400074: L_footCNTRL
+    400076: L_handCNTRL
+    400078: L_KNEE_LOCATOR
+    400080: L_shoulderCNTRL
+    400082: L_wristCNTRL
+    400084: Neck
+    400086: neckCNTRL
+    400088: polySurface2
+    400090: R_clavicleCNTRL
+    400092: R_elbowCNTRL
+    400094: R_footCNTRL
+    400096: R_handCNTRL
+    400098: R_KNEE_LOCATOR
+    400100: R_shoulderCNTRL
+    400102: R_wristCNTRL
+    400104: RootCNTRL
+    400106: Spine1CNTRL
+    400108: Spine2CNTRL
+    400110: Spine3
+    400112: TOE_IK
+    400114: TOE_IK 1
+    400116: TOE_Pivot
+    400118: TOE_Pivot 1
+    2100000: lambert1
+    4300000: polySurface2
+    9500000: //RootNode
+    13700000: polySurface2
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 75
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.7
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
