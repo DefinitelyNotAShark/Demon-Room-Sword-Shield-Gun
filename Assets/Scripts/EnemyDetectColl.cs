@@ -7,9 +7,6 @@ public class EnemyDetectColl : MonoBehaviour
 {
     private GameObject panel;
     private TintScreen tint;
-    [SerializeField]
-    private AudioClip audioClip;
-
     private AudioSource audioSource;
 
     private void Start()
@@ -23,9 +20,8 @@ public class EnemyDetectColl : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            if(audioSource != null && audioClip != null)
+            if(audioSource != null)
             {
-                audioSource.clip = audioClip;
                 audioSource.Play();
             }
             Debug.Log("Enemy hit the player!");
