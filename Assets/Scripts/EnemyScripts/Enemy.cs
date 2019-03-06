@@ -22,16 +22,22 @@ public abstract class Enemy : MonoBehaviour, IFightable
 
     public void SwordHit()
     {
-        EnemyLives -= 2;
-        HitParticles.Play();
-        isHurt = true;
+        if (!EnemyIsDead())
+        {
+            EnemyLives -= 2;
+            HitParticles.Play();
+            isHurt = true;
+        }
     }
 
     public void GunHit()
     {
-        EnemyLives--;
-        HitParticles.Play();
-        isHurt = true;
+        if (!EnemyIsDead())
+        {
+            EnemyLives--;
+            HitParticles.Play();
+            isHurt = true;
+        }
     }
 }
 

@@ -2272,6 +2272,8 @@ GameObject:
   - component: {fileID: 114088369307921406}
   - component: {fileID: 114447588638765762}
   - component: {fileID: 114186586995853684}
+  - component: {fileID: 82726117606987184}
+  - component: {fileID: 114873841438287774}
   m_Layer: 0
   m_Name: OVRPlayerControllerPrefab
   m_TagString: Player
@@ -4681,7 +4683,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1872389798811480}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 2.05, y: 6.52, z: -4.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4276468889338528}
@@ -8067,6 +8069,101 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!82 &82726117606987184
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1872389798811480}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: a37c0c246c66b4f8b81038e97ff98810, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!96 &96651446737690676
 TrailRenderer:
   serializedVersion: 2
@@ -8103,7 +8200,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 30
+  m_Time: 0.3
   m_Parameters:
     serializedVersion: 2
     widthMultiplier: 1
@@ -8513,7 +8610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9adecb66ce8110c4c8b79b0f5e5965c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swooshVelocity: 1.2
+  swooshVelocity: 1
   maximumSwoosh: 25
   speedGradient:
     serializedVersion: 2
@@ -8734,6 +8831,7 @@ MonoBehaviour:
   bulletLifeTime: 5
   muzzleFlashLight: {fileID: 108737979610569626}
   lightThreshold: 0.5
+  audioClip: {fileID: 0}
 --- !u!114 &114526269237249022
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9089,6 +9187,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   usePerEyeCameras: 0
   useFixedUpdateForTracking: 0
+--- !u!114 &114873841438287774
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1872389798811480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43da891f88d1f4c9987dd9fa7d40ce69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114953192337902220
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9128,6 +9237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f50e3479887dad48bd1ca48e8f5ee38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioClip: {fileID: 0}
 --- !u!135 &135419582226742654
 SphereCollider:
   m_ObjectHideFlags: 1

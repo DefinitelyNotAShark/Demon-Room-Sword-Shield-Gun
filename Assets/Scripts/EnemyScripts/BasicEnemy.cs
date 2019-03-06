@@ -54,6 +54,5 @@ public class BasicEnemy : Enemy
     {
         anim.SetTrigger("Hurt");
         isHurt = false;//reset the variable
-
     }
 }
