@@ -6,10 +6,24 @@ using UnityEngine;
 
 public class DetectSwordCollision : MonoBehaviour
 {
+    [SerializeField]
+    private AudioClip audioClip;
+
     private IFightable fightableObject;
+    private AudioSource audioSource;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
+        if(audioSource != null && audioClip != null)
+        {
+            audioSource.clip = audioClip;
+            audioSource.Play();
+        }
         try
         {
             fightableObject = other.GetComponent<IFightable>();//try to see if the object is fightable
