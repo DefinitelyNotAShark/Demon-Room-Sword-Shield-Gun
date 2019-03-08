@@ -15,32 +15,57 @@ public class SwordSwishManager : MonoBehaviour
     private TrailRenderer trailRenderer;
 
     private Vector3 lastPosition;
+    private AudioSource audio;
 
-	void Start ()
+    private float timeElapsed, timeRequired;
+
+    void Start()
     {
         trailRenderer = GetComponentInChildren<TrailRenderer>();
+        audio = GetComponent<AudioSource>();
+
         trailRenderer.emitting = true;
-	}
-	
-	void Update ()
+        timeElapsed = 0;
+        timeRequired = .5f;
+    }
+
+    void Update()
     {
         float tempSpeed = Speed();
 
         if (tempSpeed >= swooshVelocity)
         {
             trailRenderer.emitting = true;
+
+            if (CanSwish())
+                audio.Play();
         }
 
         else trailRenderer.emitting = false;
+        timeElapsed += Time.deltaTime;
 
-        trailRenderer.startColor = speedGradient.Evaluate(1/(maximumSwoosh / tempSpeed));
+        trailRenderer.startColor = speedGradient.Evaluate(1 / (maximumSwoosh / tempSpeed));
     }
 
-        private float Speed()
+    private float Speed()
+    {
+        float speed = (transform.position - lastPosition).magnitude / Time.deltaTime;
+        lastPosition = transform.position;
+
+        return speed;
+    }
+
+    /// <summary>
+    /// Only returns true if the countdown is done for the audio's sake
+    /// </summary>
+    /// <returns></returns>
+    private bool CanSwish()
+    {
+        if (timeElapsed > timeRequired)
         {
-            float speed = (transform.position - lastPosition).magnitude / Time.deltaTime;
-            lastPosition = transform.position;
-
-            return speed;
+            timeElapsed = 0;
+            return true;
         }
+        else return false;
     }
+}

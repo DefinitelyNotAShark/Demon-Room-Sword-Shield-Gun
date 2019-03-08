@@ -7,7 +7,7 @@ public class EnemyDetectColl : MonoBehaviour
 {
     private GameObject panel;
     private TintScreen tint;
-    private AudioSource audioSource;
+    private AudioSource audioSource;//this is the audio source that displays the melee enemy punch sound
 
     private void Start()
     {

@@ -20,8 +20,12 @@ public class BasicEnemy : Enemy
     private ParticleSystem hitParticles, deathParticles;
 
     private Animator anim;
+    private AudioSource audio;
 
-    private bool hasStartedDeath;//this is so that the enemy doesn't keep entering the death state once it's dead. 
+    private bool hasStartedDeath;//this is so that the enemy doesn't keep entering the death state once it's dead.
+
+    private float timeElapsed;
+    private float enemySnarlTime;//the time nwhere we snarlllll
 
     private void Start()
     {
@@ -33,7 +37,10 @@ public class BasicEnemy : Enemy
         DeathParticles = deathParticles;
 
         anim = GetComponent<Animator>();
+        audio = GetComponent<AudioSource>();
         hasStartedDeath = false;
+
+        timeElapsed = 0;
     }
 
     private void Update()
@@ -48,7 +55,22 @@ public class BasicEnemy : Enemy
         //check if the base detected a hurt to trigger the animation. Don't do hurt animation AND death animation, so only if the enemy is still alive
         if (isHurt && !EnemyIsDead())
             Hurt();
+
+        timeElapsed += Time.deltaTime;
+
+        if (timeElapsed >= enemySnarlTime)
+        {
+            audio.Play();
+            timeElapsed = 0;
+            enemySnarlTime = RandomSnarlTime();
+        }
     }
+
+    private float RandomSnarlTime()
+    {
+        return Random.Range(5, 15);//choose a random time between 5 and 15 seconds
+    }
+
 
     private void Hurt()
     {
@@ -56,3 +78,4 @@ public class BasicEnemy : Enemy
         isHurt = false;//reset the variable
     }
 }
+   
