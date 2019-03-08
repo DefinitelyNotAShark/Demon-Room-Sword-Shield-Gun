@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.AI;
 
 public class DyingState : StateMachineBehaviour
 {
@@ -11,15 +12,19 @@ public class DyingState : StateMachineBehaviour
     private float timeElapsed;
     private float deathTime = 3;
 
+    private NavMeshAgent enemyAgent;
+
     public override void OnStateEnter(Animator animator, AnimatorStateInfo animatorStateInfo, int layerIndex)
     {
-        Debug.Log("ENTERED DYING STATE FOR " + animator.gameObject.name.ToString());
+        //deathParticles = FindDeathParticles(animator);//find our death particle system
+        //deathParticles.Play();//play our particles
 
-        deathParticles = FindDeathParticles(animator);//find our death particle system
-        deathParticles.Play();//play our particles
+        //TurnOffRenderers(animator);//make invisible
+        //animator.GetComponent<BoxCollider>().enabled = false;//make uncollideable
 
-        TurnOffRenderers(animator);//make invisible
-        animator.GetComponent<BoxCollider>().enabled = false;//make uncollideable
+        enemyAgent = animator.GetComponent<NavMeshAgent>();
+        enemyAgent.isStopped = true;//don't let a dead man walk...
+        
 
         //AUDIO play enemy death sound
     }
@@ -45,15 +50,6 @@ public class DyingState : StateMachineBehaviour
 
     private ParticleSystem FindDeathParticles(Animator animator)
     {
-        //ParticleSystem[] particles = animator.gameObject.GetComponentsInChildren<ParticleSystem>();
-
-        //foreach(ParticleSystem p in particles)
-        //{
-        //    if (p.name == "DeathParticles")
-        //        return p;
-        //}
-        //return null;
-
         return animator.GetComponent<BasicEnemy>().DeathParticles;
     }
 }
