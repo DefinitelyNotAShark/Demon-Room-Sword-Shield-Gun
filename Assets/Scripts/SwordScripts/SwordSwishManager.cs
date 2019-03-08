@@ -19,6 +19,8 @@ public class SwordSwishManager : MonoBehaviour
 
     private float timeElapsed, timeRequired;
 
+    private bool lastFrameTrailEnabled;
+
     void Start()
     {
         trailRenderer = GetComponentInChildren<TrailRenderer>();
@@ -26,25 +28,34 @@ public class SwordSwishManager : MonoBehaviour
 
         trailRenderer.emitting = true;
         timeElapsed = 0;
-        timeRequired = .5f;
+        timeRequired = .4f;
     }
 
     void Update()
     {
-        float tempSpeed = Speed();
+        float tempSpeed = Speed();//set the variable to the speed. Only get the speed once so that the previous position isn't reset multiple times per frame.
 
-        if (tempSpeed >= swooshVelocity)
+        if (tempSpeed >= swooshVelocity)//if the sword is swinging fast enough to warrant a trail being made
         {
-            trailRenderer.emitting = true;
+            trailRenderer.emitting = true;//make the trail
 
-            if (CanSwish())
-                audio.Play();
         }
-
         else trailRenderer.emitting = false;
-        timeElapsed += Time.deltaTime;
 
+        if (TrailHasStarted())//if the countdown has reset then we can play the sound. This is to prevent the sound being started every frame
+            audio.Play();//play the sword swish sound.
+
+        timeElapsed += Time.deltaTime;
         trailRenderer.startColor = speedGradient.Evaluate(1 / (maximumSwoosh / tempSpeed));
+    }
+
+    private bool TrailHasStarted()
+    {
+        if (lastFrameTrailEnabled == false && trailRenderer.emitting == true)//if it wasn't emitting before and now it is, return true
+            return true;
+
+        lastFrameTrailEnabled = trailRenderer.emitting;//reset the state of the trailRenderer
+        return false;//otherwise it hasn't started yet.
     }
 
     private float Speed()
