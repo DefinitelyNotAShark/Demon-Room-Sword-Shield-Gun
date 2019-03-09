@@ -5,7 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+  - enabled: 0
+    path: Assets/Scenes/CameraRigScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: d0f852d8d352d8f49b1eff02c6d88e02
+  - enabled: 1
+    path: Assets/Scenes/Colloseum.unity
+    guid: 667d7c6b15e248f44bef37b31d22aa5d
   m_configObjects: {}
