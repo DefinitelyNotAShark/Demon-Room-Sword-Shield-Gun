@@ -6,12 +6,6 @@ using UnityEngine;
 public class SpawnEnemy : MonoBehaviour
 {
     [SerializeField]
-    private float minTimeBetweenSpawn;
-
-    [SerializeField]
-    private float maxTimeBetweenSpawn;
-
-    [SerializeField]
     [Tooltip("The number of enemies spawned before the wave stops")]
     private int numberOfEnemiesInWave;
 
@@ -51,24 +45,18 @@ public class SpawnEnemy : MonoBehaviour
         }
     }
 
-    private IEnumerator StartSpawning()
+    private IEnumerator StartSpawning()//this is the spawn loop
     {
-
         for (; ; )//HACK maybe put this in a game loop later?
         {
             yield return new WaitForSeconds(timeBetweenWaves);
 
             for (int i = 0; i < numberOfEnemiesInWave; i++)
             {
-                yield return new WaitForSeconds(ChooseARandomSpawnTime());//waits a random time that it chooses from our min to our max
+                yield return new WaitForSeconds(timeBetweenEnemySpawning);//waits a random time that it chooses from our min to our max
                 Spawn();
             }
         }
-    }
-
-    private float ChooseARandomSpawnTime()
-    {
-        return UnityEngine.Random.Range(minTimeBetweenSpawn, maxTimeBetweenSpawn);
     }
 
     private void Spawn()
