@@ -24,7 +24,6 @@ public class DyingState : StateMachineBehaviour
 
         enemyAgent = animator.GetComponent<NavMeshAgent>();
         enemyAgent.isStopped = true;//don't let a dead man walk...
-        
 
         //AUDIO play enemy death sound
     }
@@ -33,7 +32,8 @@ public class DyingState : StateMachineBehaviour
     {
         if (timeElapsed >= deathTime)//if everything has played and object is ok to be destroyed now
         {
-            Destroy(animator.gameObject);
+            Destroy(animator.gameObject);//DESTROOYYYYY
+            GameObject.FindGameObjectWithTag("Spawner").GetComponent<SpawnEnemy>().EnemiesOnScreen--;//Tell the spawner that there's one more demon in hell
         }
 
         timeElapsed += Time.deltaTime;//add time to the timer

@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class SpawnEnemy : MonoBehaviour
 {
+    [Header("Wave Modifiers")]
     [SerializeField]
     [Tooltip("The number of enemies spawned before the wave stops")]
     private int numberOfEnemiesInWave;
@@ -13,6 +14,15 @@ public class SpawnEnemy : MonoBehaviour
     [Tooltip("The amount of time you get to catch your breath inbetween waves")]
     private float timeBetweenWaves;
 
+    [SerializeField]
+    [Tooltip("The time between each enemy spawn")]
+    private float timeBetweenEnemySpawning;
+
+    [SerializeField]
+    [Tooltip("The percentage to increase the enemies. It's multiplied by the enemy number and rounded to whole number. 2 doubles the amount of enemies each round, .5 halfs them...etc")]
+    private float enemyIncreasePercentage;
+
+    [Header("Spawn Objects")]
     [SerializeField]
     private GameObject enemyPrefab;
 
@@ -24,10 +34,13 @@ public class SpawnEnemy : MonoBehaviour
 
     private GameObject objectInstance;
 
+    [HideInInspector]//has to be public so each enemy instance can reference it when they die
+    public  int EnemiesOnScreen = 0;//keeps track of the number of enemies 
+
 	void Start ()
     {
         if(!debugSpawn)
-        StartCoroutine(StartSpawning());//start the spawning loop
+        StartCoroutine(SpawnLoop());//start the spawning loop
 	}
 
     private void Update()
@@ -45,43 +58,53 @@ public class SpawnEnemy : MonoBehaviour
         }
     }
 
-    private IEnumerator StartSpawning()//this is the spawn loop
+    private IEnumerator SpawnLoop()//this is the spawn loop
     {
         for (; ; )//HACK maybe put this in a game loop later?
         {
-            yield return new WaitForSeconds(timeBetweenWaves);
-
-            for (int i = 0; i < numberOfEnemiesInWave; i++)
+            if (EnemiesOnScreen == 0)//if there's nothing left to defeat, we start a new wave
             {
-                yield return new WaitForSeconds(timeBetweenEnemySpawning);//waits a random time that it chooses from our min to our max
-                Spawn();
+                //WAIT. give player a chance to look around and catch their breath
+                yield return new WaitForSeconds(timeBetweenWaves);//wait until diving into a new wave
+
+                //DO SPAWN 
+                for (int i = 0; i < numberOfEnemiesInWave; i++)//for every enemy that should be spawning this wave, wait the time alotted and then spawn them
+                {
+                    yield return new WaitForSeconds(timeBetweenEnemySpawning);//waits a random time that it chooses from our min to our max
+                    Spawn();
+                }
+
+                //INCREASE DIFFICULTY
+                float tempEnemyNumber = numberOfEnemiesInWave * enemyIncreasePercentage;//increase the number of enemies next round
+                numberOfEnemiesInWave = Convert.ToInt32(tempEnemyNumber);//round that number to a whole number
             }
+            yield return new WaitForEndOfFrame();//lil pause so we don't crash the game
         }
     }
 
     private void Spawn()
     {
         objectInstance = Instantiate(enemyPrefab, ChooseARandomSpawnPoint(), transform.localRotation);//spawns our enemy at the position of the spawn point and it's normal rotation 
+        EnemiesOnScreen++;//add to the enemy on screen counter
     }
 
-    /// <summary>
-    /// Chooses a point at random from our array of transforms and returns the position
-    /// </summary>
-    private Vector3 ChooseARandomSpawnPoint()
-    {
-        int randomPointIndex = UnityEngine.Random.Range(0, spawnPoints.Length);
-        Transform t;
-
-        for(int i = 0; i < spawnPoints.Length; i++)
+        /// <summary>
+        /// Chooses a point at random from our array of transforms and returns the position
+        /// </summary>
+        private Vector3 ChooseARandomSpawnPoint()
         {
-            if (i == randomPointIndex)
-            {
-                t = spawnPoints[i];
-                return t.position;
-            }
-        }
-        t = spawnPoints[0];
-        return t.position;//if it didn't choose a point, return the first one of the index
-    }
+            int randomPointIndex = UnityEngine.Random.Range(0, spawnPoints.Length);
+            Transform t;
 
+            for (int i = 0; i < spawnPoints.Length; i++)
+            {
+                if (i == randomPointIndex)
+                {
+                    t = spawnPoints[i];
+                    return t.position;
+                }
+            }
+            t = spawnPoints[0];
+            return t.position;//if it didn't choose a point, return the first one of the index
+        }  
 }

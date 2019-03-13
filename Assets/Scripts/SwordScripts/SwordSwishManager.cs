@@ -42,20 +42,11 @@ public class SwordSwishManager : MonoBehaviour
         }
         else trailRenderer.emitting = false;
 
-        if (TrailHasStarted())//if the countdown has reset then we can play the sound. This is to prevent the sound being started every frame
-            audio.Play();//play the sword swish sound.
+        if (tempSpeed > (swooshVelocity + 2) && CanSwish())//HACK magic number Make sure the sword is goin fast before any damage happens
+            audio.Play();
 
         timeElapsed += Time.deltaTime;
         trailRenderer.startColor = speedGradient.Evaluate(1 / (maximumSwoosh / tempSpeed));
-    }
-
-    private bool TrailHasStarted()
-    {
-        if (lastFrameTrailEnabled == false && trailRenderer.emitting == true)//if it wasn't emitting before and now it is, return true
-            return true;
-
-        lastFrameTrailEnabled = trailRenderer.emitting;//reset the state of the trailRenderer
-        return false;//otherwise it hasn't started yet.
     }
 
     private float Speed()
