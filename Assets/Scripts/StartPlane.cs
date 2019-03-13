@@ -11,12 +11,12 @@ public class StartPlane : MonoBehaviour, IFightable
     [SerializeField]
     OVRScreenFade screenFade;
 
-    public void GunHit()
+    public void GunHit(Vector3 collisionTransform)
     {
         StartCoroutine(LoadNextScene());
     }
 
-    public void SwordHit()
+    public void SwordHit(Vector3 collisionTransform)
     {
         StartCoroutine(LoadNextScene());
     }

@@ -17,7 +17,7 @@ public class DetectSwordCollision : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)//called when the sword hits something
     {
         if(audioSource != null && audioClip != null)
         {
@@ -27,13 +27,20 @@ public class DetectSwordCollision : MonoBehaviour
         try
         {
             fightableObject = other.GetComponent<IFightable>();//try to see if the object is fightable
-            fightableObject.SwordHit();//do whatever it's supposed to if it's hit
+            fightableObject.SwordHit(GetContactPoint(other));//do whatever it's supposed to if it's hit
 
-            Debug.Log("The sword hit an enemy");
         }
         catch(NullReferenceException)//if there's no fightable object
         {
-            Debug.Log("The sword hit something other than an enemy");
+            //AUDIO play a sword hitting stone sound
         }
     }
+
+    /// <summary>
+    /// Returns the Vector3 of where the sword hit on the enemy
+    /// </summary>
+    private Vector3 GetContactPoint(Collider collision)
+    {
+        return collision.ClosestPointOnBounds(transform.position);
+    } 
 }

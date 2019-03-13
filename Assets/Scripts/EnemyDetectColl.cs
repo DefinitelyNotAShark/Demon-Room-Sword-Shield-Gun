@@ -24,7 +24,6 @@ public class EnemyDetectColl : MonoBehaviour
             {
                 audioSource.Play();
             }
-            Debug.Log("Enemy hit the player!");
             StartCoroutine(tint.FadeImage());
         }
     }

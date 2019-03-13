@@ -20,22 +20,22 @@ public abstract class Enemy : MonoBehaviour, IFightable
         else return false;
     }
 
-    public void SwordHit()
+    public void SwordHit(Vector3 collisionPoint)
     {
         if (!EnemyIsDead())
         {
             EnemyLives -= 2;
-            HitParticles.Play();
+            Instantiate(HitParticles, collisionPoint, HitParticles.transform.rotation);//put the hit particles at the place of where they were hit
             isHurt = true;
         }
     }
 
-    public void GunHit()
+    public void GunHit(Vector3 collisionPoint)
     {
         if (!EnemyIsDead())
         {
             EnemyLives--;
-            HitParticles.Play();
+            Instantiate(HitParticles, collisionPoint, HitParticles.transform.rotation);//put the hit particles at the place of contact
             isHurt = true;
         }
     }
