@@ -12,7 +12,11 @@ public class DetectBulletCollision : MonoBehaviour
     {
         try
         {
-            fightableObject = other.GetComponent<IFightable>();//try to see if the object is fightable            
+            fightableObject = other.GetComponent<IFightable>();//try to see if the object is fightable  
+
+            if (isDying(other))//ignore weapon collision if the enemy is dying
+                return;
+
             fightableObject.GunHit(GetContactPoint(other));//do whatever it's supposed to if it's hit
 
             Destroy(this.gameObject);
@@ -23,6 +27,17 @@ public class DetectBulletCollision : MonoBehaviour
             //here we could play some particles for the bullet hitting a solid object like some sparks or something
         }
     }
+
+
+    //checks the enemy script to see whether it is dying
+    private bool isDying(Collider other)
+    {
+        if (other.GetComponent<BasicEnemy>().EnemyIsDead())//if the enemy script says it is dying return true
+            return true;
+
+        else return false;
+    }
+
     /// <summary>
     /// Returns the Vector3 of where the sword hit on the enemy
     /// </summary>

@@ -21,6 +21,9 @@ public class DetectSwordCollision : MonoBehaviour
         try
         {
             fightableObject = other.GetComponent<IFightable>();//try to see if the object is fightable
+            
+            if (isDying(other))//ignore weapon collision if the enemy is dying
+                return;
 
             if (swordSwishScript.SwordIsFastEnough)//check to see if the sword is going fast enough to do damage
             {
@@ -36,6 +39,14 @@ public class DetectSwordCollision : MonoBehaviour
         }
     }
 
+    //checks the enemy script to see whether it is dying
+    private bool isDying(Collider other)
+    {
+        if (other.GetComponent<BasicEnemy>().EnemyIsDead())//if the enemy script says it is dying return true
+            return true;
+
+        else return false;
+    }
     /// <summary>
     /// Returns the Vector3 of where the sword hit on the enemy
     /// </summary>
