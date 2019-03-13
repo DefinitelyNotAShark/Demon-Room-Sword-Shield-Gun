@@ -7,19 +7,30 @@ using UnityEngine;
 public class DetectBulletCollision : MonoBehaviour
 {
     private IFightable fightableObject;
+    private AudioSource audio;
+
+    private void Start()
+    {
+        audio = GetComponent<AudioSource>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         try
         {
+            //PRE COLLISION CHECKS
             fightableObject = other.GetComponent<IFightable>();//try to see if the object is fightable  
 
             if (isDying(other))//ignore weapon collision if the enemy is dying
                 return;
 
+            //HANDLE COLLISION
             fightableObject.GunHit(GetContactPoint(other));//do whatever it's supposed to if it's hit
+            
+            if (audio != null)//play the bullet hitting enemy sound
+                audio.Play();
 
-            Destroy(this.gameObject);
+            StartCoroutine(DestroyBullet());
         }
         catch (NullReferenceException)//if there's no fightable object
         {
@@ -28,6 +39,14 @@ public class DetectBulletCollision : MonoBehaviour
         }
     }
 
+    //this is so we can play the bullet hit enemy sound effect
+    private IEnumerator DestroyBullet()
+    {
+        this.gameObject.GetComponent<MeshRenderer>().enabled = false;
+        this.gameObject.GetComponent<BoxCollider>().enabled = false;
+        yield return new WaitForSeconds(1);
+        Destroy(this.gameObject);
+    }
 
     //checks the enemy script to see whether it is dying
     private bool isDying(Collider other)
