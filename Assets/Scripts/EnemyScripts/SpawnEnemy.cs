@@ -7,6 +7,10 @@ public class SpawnEnemy : MonoBehaviour
 {
     [Header("Wave Modifiers")]
     [SerializeField]
+    [Tooltip("The total number of waves before the game ends")]
+    private int totalWaves = 5;
+
+    [SerializeField]
     [Tooltip("The number of enemies spawned before the wave stops")]
     private int numberOfEnemiesInWave;
 
@@ -22,6 +26,11 @@ public class SpawnEnemy : MonoBehaviour
     [Tooltip("The percentage to increase the enemies. It's multiplied by the enemy number and rounded to whole number. 2 doubles the amount of enemies each round, .5 halfs them...etc")]
     private float enemyIncreasePercentage;
 
+    [Header("Wave Indicators")]
+    [SerializeField]
+    [Tooltip("Particles to play when starting a new wave")]
+    private ParticleSystem waveParticles;
+
     [Header("Spawn Objects")]
     [SerializeField]
     private GameObject enemyPrefab;
@@ -36,6 +45,8 @@ public class SpawnEnemy : MonoBehaviour
 
     [HideInInspector]//has to be public so each enemy instance can reference it when they die
     public  int EnemiesOnScreen = 0;//keeps track of the number of enemies 
+
+    public static event Action WavesCompleted;
 
 	void Start ()
     {
@@ -60,10 +71,13 @@ public class SpawnEnemy : MonoBehaviour
 
     private IEnumerator SpawnLoop()//this is the spawn loop
     {
-        for (; ; )//HACK maybe put this in a game loop later?
+        int completedWaves = 0;
+        bool firstWave = true;
+        while(completedWaves < totalWaves) // Repeat until we complete all the necessary waves
         {
             if (EnemiesOnScreen == 0)//if there's nothing left to defeat, we start a new wave
             {
+                waveParticles.Play();
                 //WAIT. give player a chance to look around and catch their breath
                 yield return new WaitForSeconds(timeBetweenWaves);//wait until diving into a new wave
 
@@ -77,9 +91,16 @@ public class SpawnEnemy : MonoBehaviour
                 //INCREASE DIFFICULTY
                 float tempEnemyNumber = numberOfEnemiesInWave * enemyIncreasePercentage;//increase the number of enemies next round
                 numberOfEnemiesInWave = Convert.ToInt32(tempEnemyNumber);//round that number to a whole number
+                if (!firstWave)
+                    completedWaves++;
+                else
+                    firstWave = false;
             }
             yield return new WaitForEndOfFrame();//lil pause so we don't crash the game
         }
+
+        if (WavesCompleted != null)
+            WavesCompleted.Invoke();
     }
 
     private void Spawn()
