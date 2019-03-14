@@ -10,7 +10,6 @@ public abstract class Enemy : MonoBehaviour, IFightable
     [HideInInspector]
     public ParticleSystem HitParticles, DeathParticles;
 
-    public bool isHurt;//detects if the enemy was hurt so the animator can be set in the enemy class
 
     public bool EnemyIsDead()
     {
@@ -22,22 +21,14 @@ public abstract class Enemy : MonoBehaviour, IFightable
 
     public void SwordHit()
     {
-        if (!EnemyIsDead())
-        {
-            EnemyLives -= 2;
-            HitParticles.Play();
-            isHurt = true;
-        }
+        EnemyLives -= 2;
+        HitParticles.Play();
     }
 
     public void GunHit()
     {
-        if (!EnemyIsDead())
-        {
-            EnemyLives--;
-            HitParticles.Play();
-            isHurt = true;
-        }
+        EnemyLives--;
+        HitParticles.Play();
     }
 }
 

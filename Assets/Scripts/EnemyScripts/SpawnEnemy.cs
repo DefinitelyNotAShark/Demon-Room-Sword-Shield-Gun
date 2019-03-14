@@ -25,31 +25,12 @@ public class SpawnEnemy : MonoBehaviour
     [SerializeField]
     private Transform[] spawnPoints;
 
-    [SerializeField]
-    private bool debugSpawn;
-
     private GameObject objectInstance;
 
 	void Start ()
     {
-        if(!debugSpawn)
         StartCoroutine(StartSpawning());//start the spawning loop
 	}
-
-    private void Update()
-    {
-        if (debugSpawn)//spawn at the press of any button
-        {
-            //check for any button press of ABXY
-            if (OVRInput.GetDown(OVRInput.Button.One) ||
-                OVRInput.GetDown(OVRInput.Button.Two) ||
-                OVRInput.GetDown(OVRInput.Button.Three) ||
-                OVRInput.GetDown(OVRInput.Button.Four))
-            {
-                Spawn();//calls the instantiate function
-            }
-        }
-    }
 
     private IEnumerator StartSpawning()
     {

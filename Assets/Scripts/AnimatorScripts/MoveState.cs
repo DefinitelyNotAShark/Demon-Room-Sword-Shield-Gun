@@ -22,6 +22,7 @@ public class MoveState : StateMachineBehaviour
         enemyAgent.isStopped = false;//when we enter the move state, we can move again
 
         enemyAgent.SetDestination(playerTransform.position);
+        Debug.Log("player transform = " + playerTransform.position.ToString());
     }
 
     public override void OnStateMove(Animator animator, AnimatorStateInfo animatorStateInfo, int layerIndex)
@@ -31,7 +32,7 @@ public class MoveState : StateMachineBehaviour
 
         float distance = Vector3.Distance(playerTransform.position, enemyTransform.position);
 
-        if (distance <= enemyScript.minRange)//check if the enemy is near the player and stop it.
+        if (distance <= enemyScript.minRange)
         {
             enemyAgent.isStopped = true;//stop it, you
             animator.SetBool("IsCloseToPlayer", true);//this is how the animator knows to go back to idle
