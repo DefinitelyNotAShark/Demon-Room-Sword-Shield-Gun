@@ -23,6 +23,7 @@ public class StartPlane : MonoBehaviour, IFightable
 
     private IEnumerator LoadNextScene()
     {
+        Debug.Log("Loading next Scene");
         screenFade.FadeOut();
         AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(nextScene);
         while(!asyncOperation.isDone)
