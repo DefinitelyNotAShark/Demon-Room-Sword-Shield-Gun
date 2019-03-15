@@ -41,6 +41,7 @@ public class BasicEnemy : Enemy
         hasStartedDeath = false;
 
         timeElapsed = 0;
+        enemySnarlTime = RandomSnarlTime();//set it to snarl randomly on start too
     }
 
     private void Update()

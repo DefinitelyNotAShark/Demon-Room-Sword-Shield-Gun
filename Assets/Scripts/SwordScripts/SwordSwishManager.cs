@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class SwordSwishManager : MonoBehaviour
 {
+    [HideInInspector]
+    public bool SwordIsFastEnough { get; private set; }//If this evaluates true, then the sword can do damage. Otherwise, it shouldn't do much
+ 
     [SerializeField]
     private float swooshVelocity = 5;
     [SerializeField]
@@ -13,13 +16,10 @@ public class SwordSwishManager : MonoBehaviour
     private Gradient speedGradient;
 
     private TrailRenderer trailRenderer;
-
     private Vector3 lastPosition;
     private AudioSource audio;
 
     private float timeElapsed, timeRequired;
-
-    private bool lastFrameTrailEnabled;
 
     void Start()
     {
@@ -37,25 +37,20 @@ public class SwordSwishManager : MonoBehaviour
 
         if (tempSpeed >= swooshVelocity)//if the sword is swinging fast enough to warrant a trail being made
         {
+            SwordIsFastEnough = true;//tell the sword it's going fast enough to do damage
             trailRenderer.emitting = true;//make the trail
 
+            if (tempSpeed > (swooshVelocity + 2) && CanSwish())//If the sword is swinging fast enough to make a swish sound
+                audio.Play();//it swish
         }
-        else trailRenderer.emitting = false;
-
-        if (TrailHasStarted())//if the countdown has reset then we can play the sound. This is to prevent the sound being started every frame
-            audio.Play();//play the sword swish sound.
+        else
+        {
+            trailRenderer.emitting = false;//turns the trail off
+            SwordIsFastEnough = false;//tells the sword it's not going fast enough to do damage
+        }
 
         timeElapsed += Time.deltaTime;
-        trailRenderer.startColor = speedGradient.Evaluate(1 / (maximumSwoosh / tempSpeed));
-    }
-
-    private bool TrailHasStarted()
-    {
-        if (lastFrameTrailEnabled == false && trailRenderer.emitting == true)//if it wasn't emitting before and now it is, return true
-            return true;
-
-        lastFrameTrailEnabled = trailRenderer.emitting;//reset the state of the trailRenderer
-        return false;//otherwise it hasn't started yet.
+        trailRenderer.startColor = speedGradient.Evaluate(1 / (maximumSwoosh / tempSpeed));//change color to match how fast it's swinging
     }
 
     private float Speed()

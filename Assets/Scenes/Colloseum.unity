@@ -298,7 +298,7 @@ GameObject:
   - component: {fileID: 392068396}
   m_Layer: 0
   m_Name: SpawnEnemyManager
-  m_TagString: Untagged
+  m_TagString: Spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -314,10 +314,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37edfb9af83934a44995e618f80024a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minTimeBetweenSpawn: 4
-  maxTimeBetweenSpawn: 6
-  numberOfEnemiesInWave: 10
+  numberOfEnemiesInWave: 5
   timeBetweenWaves: 5
+  timeBetweenEnemySpawning: 2
+  enemyIncreasePercentage: 1.5
   enemyPrefab: {fileID: 1946095421174510, guid: 4cc90ae820a8fe24a89e0c9c231dcd79,
     type: 2}
   spawnPoints:
@@ -331,7 +331,8 @@ MonoBehaviour:
   - {fileID: 1844607471}
   - {fileID: 1895342763}
   - {fileID: 1850166112}
-  debugSpawn: 1
+  debugSpawn: 0
+  EnemiesOnScreen: 0
 --- !u!4 &392068397
 Transform:
   m_ObjectHideFlags: 0
@@ -392,7 +393,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400054, guid: c3a8f13c7c00df649b20806962f89bc8, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 400054, guid: c3a8f13c7c00df649b20806962f89bc8, type: 3}
       propertyPath: m_LocalScale.x
@@ -426,48 +427,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 11.485567, y: 5.8805375, z: 11.485569}
   m_Center: {x: 0.00000071525574, y: 0, z: -0.0000011920929}
---- !u!1001 &1371194147
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4082241458099146, guid: 4cc90ae820a8fe24a89e0c9c231dcd79, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4082241458099146, guid: 4cc90ae820a8fe24a89e0c9c231dcd79, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 5.67
-      objectReference: {fileID: 0}
-    - target: {fileID: 4082241458099146, guid: 4cc90ae820a8fe24a89e0c9c231dcd79, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -18.36
-      objectReference: {fileID: 0}
-    - target: {fileID: 4082241458099146, guid: 4cc90ae820a8fe24a89e0c9c231dcd79, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4082241458099146, guid: 4cc90ae820a8fe24a89e0c9c231dcd79, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4082241458099146, guid: 4cc90ae820a8fe24a89e0c9c231dcd79, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4082241458099146, guid: 4cc90ae820a8fe24a89e0c9c231dcd79, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4082241458099146, guid: 4cc90ae820a8fe24a89e0c9c231dcd79, type: 2}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 4cc90ae820a8fe24a89e0c9c231dcd79, type: 2}
-  m_IsPrefabAsset: 0
 --- !u!1 &1371484337
 GameObject:
   m_ObjectHideFlags: 0
@@ -688,16 +647,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 82519985467767132, guid: 87321371a341df0488492c21adb80a87,
+    - target: {fileID: 82752741871583030, guid: 87321371a341df0488492c21adb80a87,
         type: 2}
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 82519985467767132, guid: 87321371a341df0488492c21adb80a87,
-        type: 2}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 3062dc64d0fbfcf4cbec73b53a0ffb4e, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87321371a341df0488492c21adb80a87, type: 2}
   m_IsPrefabAsset: 0
