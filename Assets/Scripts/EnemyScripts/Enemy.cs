@@ -10,6 +10,8 @@ public abstract class Enemy : MonoBehaviour, IFightable
     [HideInInspector]
     public ParticleSystem HitParticles, DeathParticles;
 
+    private GameObject particleInstance;
+
     public bool isHurt;//detects if the enemy was hurt so the animator can be set in the enemy class
 
     public bool EnemyIsDead()
@@ -25,7 +27,8 @@ public abstract class Enemy : MonoBehaviour, IFightable
         if (!EnemyIsDead())
         {
             EnemyLives -= 2;
-            Instantiate(HitParticles, collisionPoint, HitParticles.transform.rotation);//put the hit particles at the place of where they were hit
+            particleInstance = Instantiate(HitParticles, collisionPoint, HitParticles.transform.rotation).gameObject;//put the hit particles at the place of where they were hit
+            DestroyParticlesAfterPlaying(particleInstance);
             isHurt = true;
         }
     }
@@ -35,9 +38,15 @@ public abstract class Enemy : MonoBehaviour, IFightable
         if (!EnemyIsDead())
         {
             EnemyLives--;
-            Instantiate(HitParticles, collisionPoint, HitParticles.transform.rotation);//put the hit particles at the place of contact
+            particleInstance = Instantiate(HitParticles, collisionPoint, HitParticles.transform.rotation).gameObject;//put the hit particles at the place of contact
+            DestroyParticlesAfterPlaying(particleInstance);
             isHurt = true;
         }
+    }
+
+    void DestroyParticlesAfterPlaying(GameObject particles)
+    {
+        Destroy(particles, 2);
     }
 }
 
