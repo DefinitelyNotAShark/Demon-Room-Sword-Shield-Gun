@@ -24979,10 +24979,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 82752741871583030, guid: 87321371a341df0488492c21adb80a87,
+    - target: {fileID: 114088369307921406, guid: 87321371a341df0488492c21adb80a87,
         type: 2}
-      propertyPath: m_PlayOnAwake
-      value: 0
+      propertyPath: useProfileData
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87321371a341df0488492c21adb80a87, type: 2}

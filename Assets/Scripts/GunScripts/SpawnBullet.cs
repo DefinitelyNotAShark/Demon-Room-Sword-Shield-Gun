@@ -45,6 +45,7 @@ public class SpawnBullet : MonoBehaviour
     {
         if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger))
         {
+            Debug.Log("I SHOT A BITCH");
             //AUDIO play a shooting sound here
             if (audioSource != null && audioClip != null)
             {
