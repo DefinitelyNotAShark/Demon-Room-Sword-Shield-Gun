@@ -67,7 +67,7 @@ public class OVRGrabber : MonoBehaviour
     {
         if (grabbedObject != null)//if we have an object in our hand
         {
-            if (grabbedObject.tag == "Gun" || grabbedObject.tag == "Sword")//HACK use an interface or something better to detect if droppable
+            if (grabbedObject.tag == "Sword")//HACK use an interface or something better to detect if droppable
             {
                 return false;
             }
@@ -134,34 +134,15 @@ public class OVRGrabber : MonoBehaviour
                 m_parentTransform.rotation = Quaternion.identity;
             }
         }
-        GrabTheGunAndSword();
-       
+        GrabTheSword();   
     }
 
     /// <summary>
     /// Checks which hand this script is on and finds the weapon that hand uses and calls GrabBegin on it
     /// </summary>
-    void GrabTheGunAndSword()
+    void GrabTheSword()
     {
-        //this grabs our weapon right at the start
-        if (grabbedObject == null && isLeftHand)//if we're not grabbing anything (which we shouldn't be) and it's our gun script;
-        {
-            try
-            {
-                //try to add our gun to the list of grabbable candidates and then immediately call grab begin and see what happens
-                GameObject gun = GameObject.FindGameObjectWithTag("Gun");
-                OVRGrabbable grabbable = gun.GetComponent<OVRGrabbable>();//try to get the grabbable script on the gun or it's parent
-                int refCount = 0;//i don't know what these do, but it seems like they're in the process of putting the object in the list of candidates
-                m_grabCandidates.TryGetValue(grabbable, out refCount);
-                m_grabCandidates[grabbable] = refCount + 1;
-                GrabBegin();
-            }
-            catch (System.NullReferenceException)
-            {
-                Debug.Log("can't find a gun in the scene");
-            }
-        }
-        else if(grabbedObject == null && !isLeftHand)
+        if(grabbedObject == null && !isLeftHand)
         {
             try
             {
