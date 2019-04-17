@@ -27,7 +27,8 @@ public class DyingState : StateMachineBehaviour
         if (timeElapsed >= deathTime)//if everything has played and object is ok to be destroyed now
         {
             Destroy(animator.gameObject);//DESTROOYYYYY
-            GameObject.FindGameObjectWithTag("Spawner").GetComponent<SpawnEnemy>().EnemiesOnScreen--;//Tell the spawner that there's one more demon in hell
+            //GameObject.FindGameObjectWithTag("Spawner").GetComponent<SpawnEnemy>().EnemiesOnScreen--;//Tell the spawner that there's one more demon in hell
+            GameObject.FindGameObjectWithTag("Spawner").GetComponent<EnemyWaveManager>().TotalEnemies--;
         }
 
         timeElapsed += Time.deltaTime;//add time to the timer
