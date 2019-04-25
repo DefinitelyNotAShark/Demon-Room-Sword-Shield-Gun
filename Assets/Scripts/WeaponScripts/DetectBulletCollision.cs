@@ -9,6 +9,8 @@ public class DetectBulletCollision : MonoBehaviour
     private IFightable fightableObject;
     private AudioSource audio;
 
+    public int bulletDamage;//set by the spawner depending on what kind of shot was done
+
     private void Start()
     {
         audio = GetComponent<AudioSource>();
@@ -25,7 +27,7 @@ public class DetectBulletCollision : MonoBehaviour
                 return;
 
             //HANDLE COLLISION
-            fightableObject.GunHit(GetContactPoint(other));//do whatever it's supposed to if it's hit
+            fightableObject.GunHit(GetContactPoint(other), bulletDamage);//do whatever it's supposed to if it's hit
             
             if (audio != null)//play the bullet hitting enemy sound
                 audio.Play();

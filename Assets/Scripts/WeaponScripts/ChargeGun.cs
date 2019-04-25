@@ -5,10 +5,6 @@ using UnityEngine.UI;
 
 public class ChargeGun : MonoBehaviour
 {
-    [Header("Gun Charging Values")]
-    [SerializeField]
-    private Slider gunChargingUI;
-
     [SerializeField]
     [Tooltip("The time it takes for the gun to recharge.")]
     private float maxChargeTime;
@@ -16,10 +12,12 @@ public class ChargeGun : MonoBehaviour
     [HideInInspector]
     public bool gunIsCharged = false;
 
+    private Slider slider;
     private float currentChargeTime;
 
 	void Start ()
     {
+        slider = GetComponentInChildren<Slider>();
         currentChargeTime = maxChargeTime;
 	}
 	
@@ -27,12 +25,16 @@ public class ChargeGun : MonoBehaviour
     {
         //CHANGE THE CHARGE
         if (currentChargeTime < maxChargeTime)//if it can be charged more, keep charging it
+        {
+            gunIsCharged = false;
             currentChargeTime += Time.deltaTime;
+        }
 
         else gunIsCharged = true;//otherwise, it is charged
 
         //DISPLAY THE CHARGE
-        gunChargingUI.value = currentChargeTime / maxChargeTime;
+        slider.value = currentChargeTime / maxChargeTime;
+        UpdateSliderColor();//change the color based on if charged
 	}
 
     /// <summary>
@@ -41,5 +43,13 @@ public class ChargeGun : MonoBehaviour
     public void ResetGunCharge()
     {
         currentChargeTime = 0;
+    }
+
+    private void UpdateSliderColor()
+    {
+        if (gunIsCharged)
+            slider.GetComponentInChildren<Image>().color = Color.green;
+        else
+            slider.GetComponentInChildren<Image>().color = Color.gray;
     }
 }

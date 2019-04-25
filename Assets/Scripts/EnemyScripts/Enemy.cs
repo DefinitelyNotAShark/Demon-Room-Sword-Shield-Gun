@@ -33,11 +33,11 @@ public abstract class Enemy : MonoBehaviour, IFightable
         }
     }
 
-    public void GunHit(Vector3 collisionPoint)
+    public void GunHit(Vector3 collisionPoint, int bulletDamage)
     {
         if (!EnemyIsDead())
         {
-            EnemyLives--;
+            EnemyLives-= bulletDamage;
             particleInstance = Instantiate(HitParticles, collisionPoint, HitParticles.transform.rotation).gameObject;//put the hit particles at the place of contact
             DestroyParticlesAfterPlaying(particleInstance);
             isHurt = true;

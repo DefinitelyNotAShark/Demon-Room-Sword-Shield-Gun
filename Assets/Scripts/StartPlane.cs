@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class StartPlane : MonoBehaviour, IFightable
+public class StartPlane : MonoBehaviour
 {
     [SerializeField]
     string nextScene = "Colloseum";

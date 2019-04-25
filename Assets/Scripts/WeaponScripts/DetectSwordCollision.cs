@@ -31,6 +31,8 @@ public class DetectSwordCollision : MonoBehaviour
 
                 if (audioSource != null)//if we have the enemy hit audio
                     audioSource.Play();//play the sound of the sword stabbing an enemy
+
+                OVRHaptics.RightChannel.Preempt(new OVRHapticsClip(audioSource.clip));//vibrate the controller to the sound of enemies dying
             }
         }
         catch (NullReferenceException)//if there's no fightable object
