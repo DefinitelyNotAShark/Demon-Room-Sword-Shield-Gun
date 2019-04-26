@@ -49573,7 +49573,7 @@ MonoBehaviour:
   bulletLifeTime: 5
   muzzleFlashLight: {fileID: 294349272}
   lightThreshold: 0.5
-  shootSound: {fileID: 8300000, guid: 1201b0588d8f5be4ea077715790ab5c5, type: 3}
+  shootSound: {fileID: 8300000, guid: 1b86ede19f769bd44aa45b473584184b, type: 3}
   weakShootSound: {fileID: 8300000, guid: 1201b0588d8f5be4ea077715790ab5c5, type: 3}
   shootSoundVolume: 1
   weakShootSoundVolume: 0.3
