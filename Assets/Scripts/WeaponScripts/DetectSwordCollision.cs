@@ -13,7 +13,7 @@ public class DetectSwordCollision : MonoBehaviour
     private void Start()
     {
         swordSwishScript = GetComponentInParent<SwordSwishManager>();
-        audioSource = GetComponent<AudioSource>();
+        audioSource = GetComponentInParent<AudioSource>();
     }
 
     private void OnTriggerEnter(Collider other)//called when the sword hits something
