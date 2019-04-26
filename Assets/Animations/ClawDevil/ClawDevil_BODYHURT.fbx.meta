@@ -1,0 +1,271 @@
+fileFormatVersion: 2
+guid: 3172f1e2ba4c13f4daab4e5983476047
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: ANKLE_IK
+    100002: ANKLE_IK 1
+    100004: BALL_IK
+    100006: BALL_IK 1
+    100008: BALL_Pivot
+    100010: BALL_Pivot 1
+    100012: //RootNode
+    100014: DevilBodyLow
+    100016: Elbow
+    100018: Elbow1
+    100020: GlobalCNTRL
+    100022: Head_CNTRL
+    100024: HEEL_Pivot
+    100026: HEEL_Pivot 1
+    100028: HIP
+    100030: joint15
+    100032: joint16
+    100034: joint16 1
+    100036: joint16 2
+    100038: joint16 3
+    100040: joint17
+    100042: joint18
+    100044: joint18 1
+    100046: joint18 2
+    100048: joint18 3
+    100050: joint18 4
+    100052: joint19
+    100054: joint19 1
+    100056: joint19 2
+    100058: joint19 3
+    100060: joint19 4
+    100062: joint2
+    100064: joint20
+    100066: joint21
+    100068: joint22
+    100070: joint23
+    100072: joint24
+    100074: joint25
+    100076: joint26
+    100078: joint27
+    100080: joint28
+    100082: joint29
+    100084: joint3
+    100086: joint30
+    100088: joint31
+    100090: joint32
+    100092: joint33
+    100094: joint34
+    100096: joint35
+    100098: joint36
+    100100: joint37
+    100102: joint38
+    100104: joint39
+    100106: joint4
+    100108: joint40
+    100110: joint41
+    100112: joint42
+    100114: joint43
+    100116: joint5
+    100118: joint6
+    100120: L_clavicleCNTRL
+    100122: L_footCNTRL
+    100124: L_KNEE_LOCATOR
+    100126: L_R_wristCNTRL1
+    100128: Neck_CNTRL
+    100130: R_Clavicle
+    100132: R_Clavicle1
+    100134: R_clavicleCNTRL
+    100136: R_elbowCNTRL
+    100138: R_elbowCNTRL1
+    100140: R_footCNTRL
+    100142: R_KNEE_LOCATOR
+    100144: R_shoulderCNTRL
+    100146: R_shoulderCNTRL1
+    100148: R_wristCNTRL
+    100150: root
+    100152: RootCNTRL
+    100154: Shoulder
+    100156: Shoulder1
+    100158: Spine1
+    100160: Spine1CNTRL
+    100162: Spine2
+    100164: Spine2CNTRL
+    100166: TOE_IK
+    100168: TOE_IK 1
+    100170: TOE_Pivot
+    100172: TOE_Pivot 1
+    100174: Wrist
+    100176: Wrist1
+    400000: ANKLE_IK
+    400002: ANKLE_IK 1
+    400004: BALL_IK
+    400006: BALL_IK 1
+    400008: BALL_Pivot
+    400010: BALL_Pivot 1
+    400012: //RootNode
+    400014: DevilBodyLow
+    400016: Elbow
+    400018: Elbow1
+    400020: GlobalCNTRL
+    400022: Head_CNTRL
+    400024: HEEL_Pivot
+    400026: HEEL_Pivot 1
+    400028: HIP
+    400030: joint15
+    400032: joint16
+    400034: joint16 1
+    400036: joint16 2
+    400038: joint16 3
+    400040: joint17
+    400042: joint18
+    400044: joint18 1
+    400046: joint18 2
+    400048: joint18 3
+    400050: joint18 4
+    400052: joint19
+    400054: joint19 1
+    400056: joint19 2
+    400058: joint19 3
+    400060: joint19 4
+    400062: joint2
+    400064: joint20
+    400066: joint21
+    400068: joint22
+    400070: joint23
+    400072: joint24
+    400074: joint25
+    400076: joint26
+    400078: joint27
+    400080: joint28
+    400082: joint29
+    400084: joint3
+    400086: joint30
+    400088: joint31
+    400090: joint32
+    400092: joint33
+    400094: joint34
+    400096: joint35
+    400098: joint36
+    400100: joint37
+    400102: joint38
+    400104: joint39
+    400106: joint4
+    400108: joint40
+    400110: joint41
+    400112: joint42
+    400114: joint43
+    400116: joint5
+    400118: joint6
+    400120: L_clavicleCNTRL
+    400122: L_footCNTRL
+    400124: L_KNEE_LOCATOR
+    400126: L_R_wristCNTRL1
+    400128: Neck_CNTRL
+    400130: R_Clavicle
+    400132: R_Clavicle1
+    400134: R_clavicleCNTRL
+    400136: R_elbowCNTRL
+    400138: R_elbowCNTRL1
+    400140: R_footCNTRL
+    400142: R_KNEE_LOCATOR
+    400144: R_shoulderCNTRL
+    400146: R_shoulderCNTRL1
+    400148: R_wristCNTRL
+    400150: root
+    400152: RootCNTRL
+    400154: Shoulder
+    400156: Shoulder1
+    400158: Spine1
+    400160: Spine1CNTRL
+    400162: Spine2
+    400164: Spine2CNTRL
+    400166: TOE_IK
+    400168: TOE_IK 1
+    400170: TOE_Pivot
+    400172: TOE_Pivot 1
+    400174: Wrist
+    400176: Wrist1
+    2100000: Devil_MTRL
+    4300000: DevilBodyLow
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: DevilBodyLow
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 60
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

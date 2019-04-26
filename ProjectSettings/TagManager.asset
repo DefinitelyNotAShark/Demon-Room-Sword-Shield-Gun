@@ -8,6 +8,7 @@ TagManager:
   - Sword
   - Panel
   - Spawner
+  - ScreenFader
   layers:
   - Default
   - TransparentFX
