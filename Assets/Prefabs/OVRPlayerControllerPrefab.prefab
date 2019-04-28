@@ -2490,6 +2490,8 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 7
     m_NumAlphaKeys: 2
+  swordSwish: {fileID: 8300000, guid: 3062dc64d0fbfcf4cbec73b53a0ffb4e, type: 3}
+  swordSwishVolume: 0.73
 --- !u!114 &114272382911873846
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2702,7 +2704,7 @@ MonoBehaviour:
   bulletLifeTime: 5
   muzzleFlashLight: {fileID: 108737979610569626}
   lightThreshold: 0.5
-  shootSound: {fileID: 8300000, guid: 1b86ede19f769bd44aa45b473584184b, type: 3}
+  shootSound: {fileID: 8300000, guid: c811116a509298649ba752172b403b80, type: 3}
   weakShootSound: {fileID: 8300000, guid: 1201b0588d8f5be4ea077715790ab5c5, type: 3}
   shootSoundVolume: 1
   weakShootSoundVolume: 0.3

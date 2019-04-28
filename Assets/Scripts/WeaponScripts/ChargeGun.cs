@@ -12,11 +12,22 @@ public class ChargeGun : MonoBehaviour
     [HideInInspector]
     public bool gunIsCharged = false;
 
+    //[SerializeField]
+    //private AudioClip gunIsChargedAlert;
+
+    //[SerializeField]
+    //private float gunIsChargedAlertVolume;
+
+
+    private AudioSource audioSource;
+
     private Slider slider;
     private float currentChargeTime;
+    private bool alertHasBeenPlayed;
 
 	void Start ()
     {
+        audioSource = GetComponent<AudioSource>();
         slider = GetComponentInChildren<Slider>();
         currentChargeTime = maxChargeTime;
 	}

@@ -1661,7 +1661,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1238299774599366}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 5.53, z: 0}
+  m_LocalPosition: {x: 1.0457183, y: 5.5250187, z: -1.613773}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4206885257843170}
@@ -2671,8 +2671,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 2.3776855, z: 1}
-  m_Center: {x: 0, y: 1.2172041, z: 0}
+  m_Size: {x: 1, y: 2.3776855, z: 0.50357664}
+  m_Center: {x: 0, y: 1.2172041, z: -0.07086307}
 --- !u!82 &82101959834430290
 AudioSource:
   m_ObjectHideFlags: 1
@@ -2896,7 +2896,7 @@ MonoBehaviour:
   HitParticles: {fileID: 0}
   DeathParticles: {fileID: 0}
   isHurt: 0
-  minRange: 3
+  minRange: 2
   speed: 2
   enemyCoolDownLength: 2
   enemyLives: 3

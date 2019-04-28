@@ -15,6 +15,12 @@ public class SwordSwishManager : MonoBehaviour
     [SerializeField]
     private Gradient speedGradient;
 
+    [SerializeField]
+    private AudioClip swordSwish;
+
+    [SerializeField]
+    private float swordSwishVolume;
+
     private TrailRenderer trailRenderer;
     private Vector3 lastPosition;
     private AudioSource audio;
@@ -41,7 +47,7 @@ public class SwordSwishManager : MonoBehaviour
             trailRenderer.emitting = true;//make the trail
 
             if (tempSpeed > (swooshVelocity + 2) && CanSwish())//If the sword is swinging fast enough to make a swish sound
-                audio.Play();//it swish
+                audio.PlayOneShot(swordSwish, swordSwishVolume);
         }
         else
         {
