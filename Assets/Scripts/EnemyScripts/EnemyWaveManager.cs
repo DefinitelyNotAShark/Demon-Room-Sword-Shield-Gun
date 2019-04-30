@@ -12,6 +12,9 @@ public class EnemyWaveManager : MonoBehaviour
     [SerializeField]
     [Tooltip("Time between waves.")]
     private float waveDelay = 5f;
+    [SerializeField]
+    [Tooltip("Maximum number of enemies to allow at once.")]
+    private int maxEnemies = 8;
 
     [Header("Wave Indicators")]
     [SerializeField]
@@ -51,6 +54,8 @@ public class EnemyWaveManager : MonoBehaviour
                 {
                     for(int i = 0; i < g.Enemies.Count; i++)
                     {
+                        while (TotalEnemies >= maxEnemies)
+                            yield return null;
                         SpawnEnemy(g, i);
                     }
                     // Wait for a predertermined amount of time before the next group
