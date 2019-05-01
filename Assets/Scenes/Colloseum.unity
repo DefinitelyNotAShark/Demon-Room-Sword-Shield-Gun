@@ -5967,10 +5967,15 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 224505516107943166, guid: 87321371a341df0488492c21adb80a87,
+    - target: {fileID: 114470448045149984, guid: 87321371a341df0488492c21adb80a87,
         type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: 0.013
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 1574098065086232, guid: 717cbc8929b609646afff976e8f68a55,
+        type: 2}
+    - target: {fileID: 4874082460144412, guid: 87321371a341df0488492c21adb80a87, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -0.3554
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87321371a341df0488492c21adb80a87, type: 2}

@@ -2896,7 +2896,7 @@ MonoBehaviour:
   HitParticles: {fileID: 0}
   DeathParticles: {fileID: 0}
   isHurt: 0
-  minRange: 2
+  minRange: 3
   speed: 2
   enemyCoolDownLength: 2
   enemyLives: 3
