@@ -3455,6 +3455,10 @@ MonoBehaviour:
   hitParticles: {fileID: 198397411419183750, guid: ae79607519057064194d6167712a720d,
     type: 2}
   deathParticles: {fileID: 198434107821326072}
+  blood: {fileID: 8300000, guid: 01745e0490f7205439f2fd8d52f0e2e0, type: 3}
+  snarl: {fileID: 8300000, guid: 39808d1ab1b7bb1438519ae7bfa20cc9, type: 3}
+  bloodVolume: 1
+  snarlVolume: 0.4
 --- !u!114 &114858534080950504
 MonoBehaviour:
   m_ObjectHideFlags: 1
