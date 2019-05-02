@@ -52,7 +52,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4374991747675158}
   - component: {fileID: 20949894793786512}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LeftEyeAnchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4154333894435870}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: TrackingSpace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4798847913845296}
   - component: {fileID: 54016710500812172}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LeftControllerAnchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 224886643684868730}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166,7 +166,7 @@ GameObject:
   - component: {fileID: 224431285011995256}
   - component: {fileID: 222944849139382716}
   - component: {fileID: 114858713699697298}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -199,7 +199,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4338448129443822}
   - component: {fileID: 54359393800650626}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RightControllerAnchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -214,7 +214,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4276468889338528}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ForwardDirection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -247,7 +247,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4553277867883854}
   - component: {fileID: 20886676485986944}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RightEyeAnchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -281,7 +281,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4476002844171252}
   - component: {fileID: 114284860780813814}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: DefaultHandMaterialManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -299,7 +299,7 @@ GameObject:
   - component: {fileID: 81041787565677422}
   - component: {fileID: 20955825487701296}
   - component: {fileID: 114526269237249022}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CenterEyeAnchor
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -331,7 +331,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4058615828142430}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: TrackerAnchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -349,7 +349,7 @@ GameObject:
   - component: {fileID: 54427998386231594}
   - component: {fileID: 135933369912742932}
   - component: {fileID: 114098342097154232}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RightHandAnchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -367,7 +367,7 @@ GameObject:
   - component: {fileID: 114756448301208060}
   - component: {fileID: 114627026385364356}
   - component: {fileID: 114093822536657440}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: OVRCameraRig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -383,7 +383,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4698438430304394}
   - component: {fileID: 114740675710177544}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: DefaultBodyMaterialManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -418,7 +418,7 @@ GameObject:
   - component: {fileID: 54311706396451014}
   - component: {fileID: 135419582226742654}
   - component: {fileID: 114560294281331386}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LeftHandAnchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -451,7 +451,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224575756849817010}
   - component: {fileID: 114197214141450880}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -467,7 +467,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4982970619848686}
   - component: {fileID: 114174944013168836}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -483,7 +483,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4458035257562122}
   - component: {fileID: 114446798168823844}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: hand_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -519,7 +519,7 @@ GameObject:
   - component: {fileID: 114612756146229652}
   - component: {fileID: 82632797502772938}
   - component: {fileID: 114345190864611724}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LocalAvatar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -540,7 +540,7 @@ GameObject:
   - component: {fileID: 114186586995853684}
   - component: {fileID: 82726117606987184}
   - component: {fileID: 114873841438287774}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: OVRPlayerControllerPrefab
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -577,7 +577,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4104094439311500}
   - component: {fileID: 114256493897232378}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: controller_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -643,7 +643,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4618284597402382}
   - component: {fileID: 114957257499347362}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: controller_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -659,7 +659,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4859389656774460}
   - component: {fileID: 114117620664261582}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -675,7 +675,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4142425032954132}
   - component: {fileID: 114542161281818400}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: hand_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1138,7 +1138,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1872389798811480}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 7.11, z: 0.03}
+  m_LocalPosition: {x: 2.05, y: 6.52, z: -4.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4276468889338528}
@@ -1166,7 +1166,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1193107487512944}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0.00000028088027}
-  m_LocalPosition: {x: -0.005, y: 0.04, z: -0.373}
+  m_LocalPosition: {x: -0.005, y: 0.04, z: -0.32}
   m_LocalScale: {x: 0.50000024, y: 0.5, z: 0.5000002}
   m_Children:
   - {fileID: 4551147411411168}
@@ -3101,7 +3101,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300028, guid: 2c5daffb2970b2442be3e2e26c9ffb3f, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -12460,17 +12460,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1449980517446278}
-  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: -0.23799992}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.209}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224575756849817010}
   m_Father: {fileID: 4389384278768022}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.013, y: -0.21299982}
+  m_AnchoredPosition: {x: 0.002, y: 0.0363}
   m_SizeDelta: {x: 0.15, y: 0.15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224575756849817010

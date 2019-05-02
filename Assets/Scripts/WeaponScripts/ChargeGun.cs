@@ -18,7 +18,6 @@ public class ChargeGun : MonoBehaviour
     //[SerializeField]
     //private float gunIsChargedAlertVolume;
 
-
     private AudioSource audioSource;
 
     private Slider slider;
@@ -59,7 +58,7 @@ public class ChargeGun : MonoBehaviour
     private void UpdateSliderColor()
     {
         if (gunIsCharged)
-            slider.GetComponentInChildren<Image>().color = Color.green;
+            slider.GetComponentInChildren<Image>().color = Color.white;
         else
             slider.GetComponentInChildren<Image>().color = Color.gray;
     }
