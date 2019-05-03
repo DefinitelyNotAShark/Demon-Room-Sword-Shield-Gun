@@ -19,6 +19,12 @@ public class BasicEnemy : Enemy
     [SerializeField]
     private ParticleSystem hitParticles, deathParticles;
 
+    [SerializeField]
+    private AudioClip blood, snarl;
+
+    [SerializeField]
+    private float bloodVolume, snarlVolume;
+
     private Animator anim;
     private AudioSource audio;
 
@@ -61,7 +67,7 @@ public class BasicEnemy : Enemy
 
         if (timeElapsed >= enemySnarlTime)
         {
-            audio.Play();
+            audio.PlayOneShot(snarl, snarlVolume);
             timeElapsed = 0;
             enemySnarlTime = RandomSnarlTime();
         }
@@ -76,6 +82,7 @@ public class BasicEnemy : Enemy
     private void Hurt()
     {
         anim.SetTrigger("Hurt");
+        audio.PlayOneShot(blood, bloodVolume);
         isHurt = false;//reset the variable
     }
 }

@@ -11,7 +11,6 @@ public abstract class Enemy : MonoBehaviour, IFightable
     public ParticleSystem HitParticles, DeathParticles;
 
     private GameObject particleInstance;
-
     public bool isHurt;//detects if the enemy was hurt so the animator can be set in the enemy class
 
     public bool EnemyIsDead()

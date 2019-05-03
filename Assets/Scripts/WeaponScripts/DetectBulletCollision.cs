@@ -44,7 +44,7 @@ public class DetectBulletCollision : MonoBehaviour
     //this is so we can play the bullet hit enemy sound effect
     private IEnumerator DestroyBullet()
     {
-        this.gameObject.GetComponent<MeshRenderer>().enabled = false;
+        this.gameObject.GetComponentInChildren<MeshRenderer>().enabled = false;
         this.gameObject.GetComponent<BoxCollider>().enabled = false;
         yield return new WaitForSeconds(1);
         Destroy(this.gameObject);

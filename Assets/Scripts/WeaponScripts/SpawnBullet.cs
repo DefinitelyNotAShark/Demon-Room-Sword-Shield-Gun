@@ -33,11 +33,15 @@ public class SpawnBullet : MonoBehaviour
     [Tooltip("The damage as an int that the bullet does based on whether it's charged or not")]
     private int chargedBulletDamage, nonChargedBulletDamage;
 
+    [SerializeField]
+    private ShowTrigger triggerUI;
+
     private float lastShoot;
 
     private ParticleSystem muzzleFlash;
     private Vector3 direction;
     private AudioSource audioSource;
+    private bool gunHasBeenShotOnce = false;//this tells us whether you've used your gun and if you haven't we'll show you how
 
     private ChargeGun gunCharge;//ref to script that handles the charging of the gun
 
@@ -54,6 +58,8 @@ public class SpawnBullet : MonoBehaviour
     {
         if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger))//if you press the shoot button
         {
+            gunHasBeenShotOnce = true;
+
             if (gunCharge.gunIsCharged)//strong shoot
             {
                 audioSource.PlayOneShot(shootSound, shootSoundVolume);
@@ -79,6 +85,9 @@ public class SpawnBullet : MonoBehaviour
 
         if (Time.time - lastShoot > lightThreshold)
             muzzleFlashLight.enabled = false;
+
+        if (gunHasBeenShotOnce)
+            triggerUI.HideTriggerHint();
     }
 
     //spawn the bullet and set its params to the ones set in the serialize fields of the class
