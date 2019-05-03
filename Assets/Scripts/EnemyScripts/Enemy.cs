@@ -21,11 +21,11 @@ public abstract class Enemy : MonoBehaviour, IFightable
         else return false;
     }
 
-    public void SwordHit(Vector3 collisionPoint)
+    public void SwordHit(Vector3 collisionPoint, int swordDamage)
     {
         if (!EnemyIsDead())
         {
-            EnemyLives -= 2;
+            EnemyLives -= swordDamage;
             particleInstance = Instantiate(HitParticles, collisionPoint, HitParticles.transform.rotation).gameObject;//put the hit particles at the place of where they were hit
             DestroyParticlesAfterPlaying(particleInstance);
             isHurt = true;

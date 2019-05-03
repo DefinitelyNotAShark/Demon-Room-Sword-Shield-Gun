@@ -3451,7 +3451,7 @@ MonoBehaviour:
   minRange: 2
   speed: 2
   enemyCoolDownLength: 2
-  enemyLives: 3
+  enemyLives: 20
   hitParticles: {fileID: 198397411419183750, guid: ae79607519057064194d6167712a720d,
     type: 2}
   deathParticles: {fileID: 198434107821326072}
