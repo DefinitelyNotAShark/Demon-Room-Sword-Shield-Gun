@@ -6,6 +6,9 @@ using UnityEngine;
 
 public class DetectSwordCollision : MonoBehaviour
 {
+    [SerializeField]
+    private int swordDamage;
+
     private IFightable fightableObject;
     private AudioSource audioSource;
     private SwordSwishManager swordSwishScript;
@@ -27,7 +30,7 @@ public class DetectSwordCollision : MonoBehaviour
 
             if (swordSwishScript.SwordIsFastEnough)//check to see if the sword is going fast enough to do damage
             {
-                fightableObject.SwordHit(GetContactPoint(other));//do whatever it's supposed to if it's hit
+                fightableObject.SwordHit(GetContactPoint(other), swordDamage);//do whatever it's supposed to if it's hit
 
                 if (audioSource != null)//if we have the enemy hit audio
                     audioSource.Play();//play the sound of the sword stabbing an enemy

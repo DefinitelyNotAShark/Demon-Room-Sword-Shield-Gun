@@ -6060,6 +6060,16 @@ Prefab:
       propertyPath: triggerUI
       value: 
       objectReference: {fileID: 2045555160}
+    - target: {fileID: 114470448045149984, guid: 87321371a341df0488492c21adb80a87,
+        type: 2}
+      propertyPath: chargedBulletDamage
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 114210590460901182, guid: 87321371a341df0488492c21adb80a87,
+        type: 2}
+      propertyPath: swordDamage
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87321371a341df0488492c21adb80a87, type: 2}
   m_IsPrefabAsset: 0
