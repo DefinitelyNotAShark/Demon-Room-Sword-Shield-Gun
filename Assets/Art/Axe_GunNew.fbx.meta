@@ -1,14 +1,28 @@
 fileFormatVersion: 2
-guid: 48cd4942d25d96e439a1d3edb312942c
+guid: b4088bad34bc72f42bca6f0689c50ebf
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+    100002: ClawDemonFirstPass_0006:Body
+    100004: pasted__pCube4
+    100006: pCube5
     400000: //RootNode
-    2100000: lambert2
-    2300000: //RootNode
-    3300000: //RootNode
+    400002: ClawDemonFirstPass_0006:Body
+    400004: pasted__pCube4
+    400006: pCube5
+    2100000: lambert3
+    2100002: lambert2
+    2100004: lambert4
+    2300000: ClawDemonFirstPass_0006:Body
+    2300002: pasted__pCube4
+    2300004: pCube5
+    3300000: ClawDemonFirstPass_0006:Body
+    3300002: pasted__pCube4
+    3300004: pCube5
     4300000: ClawDemonFirstPass_0006:Body
+    4300002: pasted__pCube4
+    4300004: pCube5
   externalObjects: {}
   materials:
     importMaterials: 1
