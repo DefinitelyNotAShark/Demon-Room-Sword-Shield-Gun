@@ -32,6 +32,12 @@ public class EnemyWaveManager : MonoBehaviour
     [HideInInspector]
     public int TotalEnemies {  get; set; }
 
+    [SerializeField]
+    [Tooltip("Level animator to let it know when to move to other floors with the wave count.")]
+    private Animator elevatorAnimator;
+
+    private int waveNum;//counter for the waves
+
     // Use this for initialization
     void Start ()
     {
@@ -42,6 +48,9 @@ public class EnemyWaveManager : MonoBehaviour
     {
         foreach(Wave w in waves)
         {
+            waveNum++;//add 1 to the wave counter
+            elevatorAnimator.SetInteger("WaveNum", waveNum);//update the animator to match the wave counter
+
             // Play wave particles and give the player a chance to breathe
             waveParticles.Play();
             yield return new WaitForSeconds(waveDelay);

@@ -4383,7 +4383,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 392068397}
-  - component: {fileID: 392068396}
   - component: {fileID: 392068398}
   m_Layer: 0
   m_Name: SpawnEnemyManager
@@ -4392,38 +4391,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &392068396
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 392068395}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37edfb9af83934a44995e618f80024a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  totalWaves: 5
-  numberOfEnemiesInWave: 5
-  timeBetweenWaves: 5
-  timeBetweenEnemySpawning: 2
-  enemyIncreasePercentage: 1.5
-  waveParticles: {fileID: 832892199}
-  enemyPrefab: {fileID: 1238299774599366, guid: e85b85eaea7dab44492ab018d4d1a694,
-    type: 2}
-  spawnPoints:
-  - {fileID: 1710007083}
-  - {fileID: 266157176}
-  - {fileID: 283534085}
-  - {fileID: 385049747}
-  - {fileID: 1747996020}
-  - {fileID: 1575504279}
-  - {fileID: 153216607}
-  - {fileID: 1844607471}
-  - {fileID: 1895342763}
-  - {fileID: 1850166112}
-  debugSpawn: 0
-  EnemiesOnScreen: 0
 --- !u!4 &392068397
 Transform:
   m_ObjectHideFlags: 0
@@ -4528,9 +4495,10 @@ MonoBehaviour:
         spawnPoints: 0000000008000000060000000200000007000000010000000300000005000000
       groupDelay: 10
   waveDelay: 5
+  maxEnemies: 3
   waveParticles: {fileID: 832892199}
   enemyPrefabs:
-  - {fileID: 1946095421174510, guid: 4cc90ae820a8fe24a89e0c9c231dcd79, type: 2}
+  - {fileID: 1238299774599366, guid: e85b85eaea7dab44492ab018d4d1a694, type: 2}
   spawnPoints:
   - {fileID: 283534085}
   - {fileID: 385049747}
@@ -22592,6 +22560,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1594096676}
+  - component: {fileID: 1594096677}
   m_Layer: 0
   m_Name: Arena3
   m_TagString: Untagged
@@ -22620,6 +22589,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1594096677
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1594096675}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4be282659f649ec4cbac92cb1d8cd12e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1598964704
 GameObject:
   m_ObjectHideFlags: 0
