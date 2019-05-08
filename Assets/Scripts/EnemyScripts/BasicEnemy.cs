@@ -81,7 +81,12 @@ public class BasicEnemy : Enemy
 
     private void Hurt()
     {
-        anim.SetTrigger("Hurt");
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Attack"))//if it's attacking and gets hurt, it is parried
+            anim.SetTrigger("Parry");
+
+        else
+            anim.SetTrigger("Hurt");
+
         audio.PlayOneShot(blood, bloodVolume);
         isHurt = false;//reset the variable
     }
