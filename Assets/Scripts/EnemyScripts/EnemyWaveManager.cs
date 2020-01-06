@@ -80,9 +80,10 @@ public class EnemyWaveManager : MonoBehaviour
     private void SpawnEnemy(Group g, int i)
     {
         // Spawn each enemy
-        GameObject temp = Instantiate(enemyPrefabs[(int)g.Enemies[i]]);
+        GameObject temp = Instantiate(enemyPrefabs[(int)g.Enemies[i]], spawnPoints[g.SpawnPoints[i]].position, Quaternion.identity);
         // Set each enemy to their given spawn point
-        temp.transform.SetPositionAndRotation(spawnPoints[g.SpawnPoints[i]].position, spawnPoints[g.SpawnPoints[i]].rotation);
+
+   //     temp.transform.position = spawnPoints[g.SpawnPoints[i]].position;
         // Add to the total number of enemies
         TotalEnemies++;
     }

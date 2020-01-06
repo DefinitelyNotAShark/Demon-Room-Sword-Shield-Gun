@@ -4,21 +4,34 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class StartPlane : MonoBehaviour
+public class StartPlane : MonoBehaviour, IFightable
 {
     [SerializeField]
     string nextScene = "Colloseum";
     [SerializeField]
     OVRScreenFade screenFade;
 
-    public void GunHit(Vector3 collisionTransform)
+    private bool coroutineStarted;
+
+    public void GunHit(Vector3 collisionTransform, int bulletDamage)
     {
         StartCoroutine(LoadNextScene());
     }
 
-    public void SwordHit(Vector3 collisionTransform)
+
+    public void SwordHit(Vector3 collisionTransform, int swordDamage)
     {
         StartCoroutine(LoadNextScene());
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("bullet") && !coroutineStarted)
+        {
+            StartCoroutine(LoadNextScene());
+            coroutineStarted = true;
+        }
+
     }
 
     private IEnumerator LoadNextScene()

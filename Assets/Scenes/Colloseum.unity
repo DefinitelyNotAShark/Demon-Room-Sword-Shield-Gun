@@ -1372,7 +1372,7 @@ GameObject:
   m_Layer: 0
   m_Name: SpawnPoint5
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1383,7 +1383,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 153216606}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -17.45, y: 6.67, z: 8.379999}
+  m_LocalPosition: {x: -17.45, y: 5.7, z: 8.379999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 392068397}
@@ -2019,7 +2019,7 @@ GameObject:
   m_Layer: 0
   m_Name: SpawnPoint8
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -2030,7 +2030,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 266157175}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 13.29, y: 6.67, z: 13.440001}
+  m_LocalPosition: {x: 13.29, y: 5.7, z: 13.440001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 392068397}
@@ -2123,7 +2123,7 @@ GameObject:
   m_Layer: 0
   m_Name: SpawnPoint0
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -2134,7 +2134,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 283534084}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 17.6, y: 6.67, z: -9.25}
+  m_LocalPosition: {x: 17.6, y: 5.7, z: -9.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 392068397}
@@ -3212,7 +3212,7 @@ GameObject:
   m_Layer: 0
   m_Name: SpawnPoint1
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -3223,7 +3223,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 385049746}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.82, y: 6.67, z: -16.609999}
+  m_LocalPosition: {x: 7.82, y: 5.7, z: -16.609999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 392068397}
@@ -3391,14 +3391,6 @@ MonoBehaviour:
       - enemyTypes: 0000000000000000
         spawnPoints: 0200000006000000
       groupDelay: 5
-    - groups:
-      - enemyTypes: 0000000000000000
-        spawnPoints: 0000000008000000
-      - enemyTypes: 0000000000000000
-        spawnPoints: 0700000001000000
-      - enemyTypes: 000000000000000000000000
-        spawnPoints: 040000000300000005000000
-      groupDelay: 5
   - subwaves:
     - groups:
       - enemyTypes: 000000000000000000000000
@@ -3407,22 +3399,16 @@ MonoBehaviour:
         spawnPoints: 0300000005000000
       groupDelay: 3
     - groups:
-      - enemyTypes: 000000000000000000000000000000000000000000000000
+      - enemyTypes: 000000000000000000000000
         spawnPoints: 000000000800000007000000010000000500000003000000
       - enemyTypes: 00000000000000000000000000000000
         spawnPoints: 07000000010000000600000002000000
       groupDelay: 5
     - groups:
-      - enemyTypes: 00000000000000000000000000000000
+      - enemyTypes: 0000000000000000
         spawnPoints: 07000000010000000800000000000000
       - enemyTypes: 000000000000000000000000000000000000000000000000
         spawnPoints: 070000000100000003000000050000000200000007000000
-      groupDelay: 10
-    - groups:
-      - enemyTypes: 00000000000000000000000000000000
-        spawnPoints: 09000000040000000100000007000000
-      - enemyTypes: 0000000000000000000000000000000000000000000000000000000000000000
-        spawnPoints: 0000000008000000060000000200000007000000010000000300000005000000
       groupDelay: 10
   waveDelay: 5
   maxEnemies: 3
@@ -11283,8 +11269,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1126066329}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 4.7, z: 0}
-  m_LocalScale: {x: 3.4974322, y: 0.23465197, z: 3.4974322}
+  m_LocalPosition: {x: 0, y: 9.08, z: 0}
+  m_LocalScale: {x: 5.382712, y: 0.23465197, z: 5.3274345}
   m_Children: []
   m_Father: {fileID: 1522296656}
   m_RootOrder: 1
@@ -14340,7 +14326,7 @@ GameObject:
   m_Layer: 0
   m_Name: SpawnPoint6
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -14351,7 +14337,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1575504278}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.26, y: 6.52, z: 17.13}
+  m_LocalPosition: {x: -9.26, y: 5.7, z: 17.13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 392068397}
@@ -15016,7 +15002,7 @@ GameObject:
   m_Layer: 0
   m_Name: SpawnPoint9
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -15027,7 +15013,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1710007082}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19, y: 6.67, z: 3}
+  m_LocalPosition: {x: 17.12, y: 5.7, z: -8.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 392068397}
@@ -15500,7 +15486,7 @@ GameObject:
   m_Layer: 0
   m_Name: SpawnPoint7
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -15511,7 +15497,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1747996019}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.56, y: 6.67, z: 18.84}
+  m_LocalPosition: {x: 2.56, y: 5.7000003, z: 18.84}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 392068397}
@@ -15943,7 +15929,7 @@ GameObject:
   m_Layer: 0
   m_Name: SpawnPoint3
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -15954,7 +15940,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1844607470}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -14, y: 6.52, z: -14.110001}
+  m_LocalPosition: {x: -14, y: 5.7, z: -14.110001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 392068397}
@@ -16045,7 +16031,7 @@ GameObject:
   m_Layer: 0
   m_Name: SpawnPoint4
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -16056,7 +16042,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1850166111}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -18.81, y: 6.67, z: -3.4100003}
+  m_LocalPosition: {x: -18.81, y: 5.7, z: -3.4100003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 392068397}
@@ -16443,7 +16429,7 @@ GameObject:
   m_Layer: 0
   m_Name: SpawnPoint2
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -16454,7 +16440,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1895342762}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.29, y: 6.67, z: -19.37}
+  m_LocalPosition: {x: -3.29, y: 5.7, z: -19.37}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 392068397}

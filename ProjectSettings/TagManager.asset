@@ -9,6 +9,7 @@ TagManager:
   - Panel
   - Spawner
   - ScreenFader
+  - bullet
   layers:
   - Default
   - TransparentFX
